@@ -1,4 +1,5 @@
 var qs = require('querystring'); // 参数解析库
+var os = require('os');
 var WebSocket = require('ws');
 var crypto = require('crypto');  // 加载crypto库
 
@@ -9,7 +10,7 @@ webServer.on('connection', function(client)
 {
 	client.name = webServer.clients.length;
 
-	console.log("kkk:", client.readyState, WebSocket.OPEN, client.upgradeReq.headers["sec-websocket-key"]);
+	// console.log("kkk:", client.readyState, WebSocket.OPEN, client.upgradeReq.headers["sec-websocket-key"]);
 
 	var msg = 'enter room!\n';
 	client.send('[' + client.name + ']: ' + msg);
@@ -39,6 +40,8 @@ webServer.on('connection', function(client)
 
 webServer.on('headers', function(messages) {
 });
+
+console.log("runing on " + getLocalIp());
 
 function handshake(key, client)
 {
@@ -78,4 +81,15 @@ function broadcast(message, client)
 			client2.send('[' + client2.name + ']: ' + message)
 		}
 	});
+}
+
+function getLocalIp()
+{
+	var IPv4 = "127.0.0.1";
+	for(var i=0;i<os.networkInterfaces().en0.length;i++){  
+	    if(os.networkInterfaces().en0[i].family=='IPv4'){  
+	        IPv4=os.networkInterfaces().en0[i].address;  
+	    }  
+	} 
+	return IPv4;
 }
