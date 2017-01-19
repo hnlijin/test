@@ -41,7 +41,7 @@ webServer.on('connection', function(client)
 webServer.on('headers', function(messages) {
 });
 
-console.log("runing on " + getLocalIp());
+console.log("runing on " + getLocalIp() + ":" + webServer.options.port);
 
 function handshake(key, client)
 {
@@ -86,10 +86,24 @@ function broadcast(message, client)
 function getLocalIp()
 {
 	var IPv4 = "127.0.0.1";
-	for(var i=0;i<os.networkInterfaces().en0.length;i++){  
-	    if(os.networkInterfaces().en0[i].family=='IPv4'){  
-	        IPv4=os.networkInterfaces().en0[i].address;  
-	    }  
-	} 
+	var netWorkInfo = os.networkInterfaces();
+	var netInfo = netWorkInfo.en0; // Mac OS
+
+	if (netInfo == null)
+	{
+		netInfo = netWorkInfo.wlan0; // linux
+	}
+
+	if (netInfo != null)
+	{
+		for(var i = 0; i < netInfo.length; i++)
+		{  
+		    if(netInfo[i].family=='IPv4')
+		    {  
+		        IPv4 = netInfo[i].address;
+		    }
+		}
+	}
+	
 	return IPv4;
 }
