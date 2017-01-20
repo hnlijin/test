@@ -7,14 +7,12 @@ var WS = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
 var webServer = new WebSocket.Server({port: 9000});
 var httpServer = http.createServer();
 
-httpServer.on('request', function(req, rep)
+httpServer.on('request', function(request, response)
 {
-	rep.write('hello');
-	rep.end();
-	//console.log(req);
+	response.write('hello');
+	response.end();
 });
 httpServer.listen(9001);
-
 
 webServer.on('connection', function(client)
 {
@@ -98,6 +96,8 @@ function getLocalIp()
 	var IPv4 = "127.0.0.1";
 	var netWorkInfo = os.networkInterfaces();
 	var netInfo = netWorkInfo.en0; // Mac OS
+
+	console.log("kkk:", netWorkInfo);
 
 	if (netInfo == null)
 	{
