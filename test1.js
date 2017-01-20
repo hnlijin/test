@@ -2,9 +2,19 @@ var qs = require('querystring'); // 参数解析库
 var os = require('os');
 var WebSocket = require('ws');
 var crypto = require('crypto');  // 加载crypto库
-
+var http = require('http');
 var WS = '258EAFA5-E914-47DA-95CA-C5AB0DC85B11';
 var webServer = new WebSocket.Server({port: 9000});
+var httpServer = http.createServer();
+
+httpServer.on('request', function(req, rep)
+{
+	rep.write('hello');
+	rep.end();
+	//console.log(req);
+});
+httpServer.listen(9001);
+
 
 webServer.on('connection', function(client)
 {
