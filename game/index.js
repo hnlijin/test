@@ -1,15 +1,22 @@
-var MasterServer = require('./MasterServer');
-var GameServer = require('./GameServer');
+var MasterServer = require('./server/MasterServer');
+var GameServer = require('./server/GameServer');
+var PlayerServer = require('./server/PlayerServer');
 
 // Init variables
 var runMaster = true;
-var showConsole = true;
 
 var masterServer;
 var gameServer;
+var playerServer;
 
-gameServer = new GameServer();
-gameServer.start();
+if (runMaster)
+{
+	gameServer = new GameServer();
+	gameServer.start();
 
-masterServer = new MasterServer(gameServer);
-masterServer.start();
+	playerServer = new PlayerServer(gameServer);
+	playerServer.start()
+
+	masterServer = new MasterServer(gameServer, playerServer);
+	masterServer.start();
+}

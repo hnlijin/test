@@ -1,13 +1,12 @@
-var GameServer = require('./GameServer');
 var http = require('http');
 var common = require('./common');
 
-function MasterServer(selected) {
-	this.selected = selected;
+function MasterServer(gameServer, playerServer) {
+	this.gameServer = gameServer;
+    this.playerServer = playerServer;
 
 	this.config = {
-        serverIP: "127.0.0.1",
-        serverPort: 9001,
+        serverPort: 9000,
     };
 }
 
