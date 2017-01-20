@@ -16,6 +16,11 @@ common.getLocalIp = function()
 		netInfo = netWorkInfo.wlan0; // linux
 	}
 
+	if (netInfo == null)
+	{
+		netInfo = netWorkInfo.rmnet_data0;
+	}
+
 	if (netInfo != null)
 	{
 		for(var i = 0; i < netInfo.length; i++)
