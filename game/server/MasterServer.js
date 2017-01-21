@@ -1,5 +1,6 @@
 var http = require('http');
 var common = require('./common');
+var webapp = require('./web/app');
 
 function MasterServer(gameServer, playerServer) {
 	this.gameServer = gameServer;
@@ -43,7 +44,9 @@ MasterServer.prototype.start = function()
 
     MS = this;
 
-    this.httpServer = http.createServer();
+    webapp.set('port', this.config.serverPort);
+    webapp.setMaster(MS);
+    this.httpServer = http.createServer(webapp);
     this.httpServer.listen(this.config.serverPort);
     this.httpServer.on('error', onError);
     this.httpServer.on('listening', onListening);
