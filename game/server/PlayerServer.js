@@ -21,11 +21,13 @@ PlayerServer.prototype.start = function()
 	this.socketServer = new WebSocket.Server({port: this.config.serverPort});
 	this.socketServer.on('connection', function(client)
 	{		
-		client.packetHandler = new PlayerPacketHandler(this, client);
+		client.packetHandler = new PlayerPacketHandler(this.gameServer, this, client);
         client.on('message', client.packetHandler.handleMessage.bind(client.packetHandler));
 		client.on('close', client.packetHandler.close.bind(client.packetHandler));
 		client.on('error', client.packetHandler.close.bind(client.packetHandler));
-	});
+
+		this.gameServer.addPlayer(client);
+	}.bind(this));
 
 	this.socketServer.on('listening', function()
 	{

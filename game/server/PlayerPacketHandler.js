@@ -1,7 +1,8 @@
 var packets = require('./packet/player');
 
-function PlayerPacketHandler(gameServer, client) {
+function PlayerPacketHandler(gameServer, playerServer, client) {
     this.gameServer = gameServer;
+    this.playerServer = playerServer;
     this.client = client;
 }
 
@@ -40,4 +41,5 @@ PlayerPacketHandler.prototype.handleMessage = function(message)
 
 PlayerPacketHandler.prototype.close = function()
 {
+    this.gameServer.removePlayer(this.client);
 }

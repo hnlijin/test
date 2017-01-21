@@ -2,9 +2,8 @@ module.exports = function(gameServer, client, viewData)
 {
 	var name = "";
 	var len = viewData.getUint8(1, true);
-	for (var i = 2; i <= len * 2; i += 2)
-	{
-		var charCode = viewData.getUint16(i, true);
+	for (var i = 0; i < len; i += 1) {
+		var charCode = viewData.getUint16(i * 2 + 2, true);
         if (charCode == 0) {
             break;
         }
