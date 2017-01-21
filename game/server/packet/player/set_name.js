@@ -2,7 +2,7 @@ module.exports = function(gameServer, client, viewData)
 {
 	var name = "";
 	var len = viewData.getUint8(1, true);
-	for (var i = 2; i < len; i += 2)
+	for (var i = 2; i <= len * 2; i += 2)
 	{
 		var charCode = viewData.getUint16(i, true);
         if (charCode == 0) {
@@ -12,5 +12,5 @@ module.exports = function(gameServer, client, viewData)
 	}
 	client.name = name
 
-	console.log("set name succ!", name);
+	console.log("set name succ!", name, len);
 }

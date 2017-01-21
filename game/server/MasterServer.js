@@ -7,6 +7,7 @@ function MasterServer(gameServer, playerServer) {
 
 	this.config = {
         serverPort: 9000,
+        appVersion: 0,
     };
 }
 
