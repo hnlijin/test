@@ -3,6 +3,8 @@ function UpdatePlayer(playerCount) {
     this.view = new DataView(this.buf);
     this.offset = 0
     this.view.setUint8(this.offset, 3, true);
+    this.offset += 1
+    this.view.setUint8(this.offset, playerCount, true);
 }
 
 module.exports = UpdatePlayer;
