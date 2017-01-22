@@ -4,7 +4,7 @@ var webapp = require('./web/app');
 
 function MasterServer(gameServer, playerServer) {
 	this.gameServer = gameServer;
-    this.playerServer = playerServer;
+	this.playerServer = playerServer;
 
 	this.config = {
         serverPort: 9000,
@@ -46,13 +46,9 @@ MasterServer.prototype.start = function()
 
     webapp.set('port', this.config.serverPort);
     webapp.setMaster(MS);
+
     this.httpServer = http.createServer(webapp);
     this.httpServer.listen(this.config.serverPort);
     this.httpServer.on('error', onError);
     this.httpServer.on('listening', onListening);
-	this.httpServer.on('request', function(request, response)
-	{
-		response.write('welcome!');
-		response.end();
-	});
 }
