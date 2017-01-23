@@ -13,7 +13,7 @@ SeaWorld.prototype = new Mode();
 SeaWorld.prototype.onTick = function(gameServer) {
     // Called on every game tick 
     var len = this.players.length;
-    if (len > 0) {
+    if (len > 0 && gameServer.checkNofity()) {
         var updatePlayer = new gameServer.packet.UpdatePlayer(len);
         this.players.forEach(function each(player) {
             player.x += player.x + player.sx;

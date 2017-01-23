@@ -57,6 +57,7 @@ GameServer.prototype.addPlayer = function(newClient) {
 	var newPlayer = new Gamemode.Player(this.gameMode.getID(), newClient)
     this.gameMode.addPlayer(newPlayer);
     this.nofityClient(new this.packet.AddPlayer(newPlayer));
+    return newPlayer;
 }
 
 GameServer.prototype.removePlayer = function(removeClient) {
@@ -73,6 +74,10 @@ GameServer.prototype.nofityClient = function(packet) {
 	this.socketServer.clients.forEach(function each(client) {
 		client.sendPacket(packet);
 	});
+}
+
+GameServer.prototype.checkNofity = function(packet) {
+	return this.socketServer.clients.length > 0
 }
 
 GameServer.prototype.sendPacket = function(packet) {

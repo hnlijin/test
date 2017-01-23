@@ -1,4 +1,4 @@
 module.exports = {
-    1: require('./set_name'),
-    2: require('./control'),
+    1: require('./join_game'),
+    2: require('./player_control'),
 };

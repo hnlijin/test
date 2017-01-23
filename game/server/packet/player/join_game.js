@@ -10,6 +10,8 @@ module.exports = function(gameServer, client, viewData)
         name += String.fromCharCode(charCode);
 	}
 	client.name = name
+	
+	var newPlayer = gameServer.addPlayer(client);
 
-	console.log("set name succ!", name, len);
+	console.log("Join Game:", newPlayer.id, name, len);
 }
