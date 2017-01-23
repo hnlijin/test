@@ -17,7 +17,7 @@ app.setMaster = function (server) {
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/../../client/0'));
+app.use(express.static(__dirname + '/../../client'));
 
 app.get('/1', function(req, res) {
 	res.render('index', {title:'hello world'});
