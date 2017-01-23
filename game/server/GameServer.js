@@ -54,7 +54,8 @@ GameServer.prototype.mainLoop = function() {
 }
 
 GameServer.prototype.addPlayer = function(newClient) {
-	var newPlayer = new Gamemode.Player(this.gameMode.getID(), newClient)
+	var newPlayer = new Gamemode.Player(this.gameMode.getID(), newClient);
+	newClient.updatePlayer = this.updatePlayer.bind(newPlayer); 
     this.gameMode.addPlayer(newPlayer);
     this.nofityClient(new this.packet.AddPlayer(newPlayer));
     return newPlayer;
@@ -68,6 +69,11 @@ GameServer.prototype.removePlayer = function(removeClient) {
 			return;
 		}
     }.bind(this));
+}
+
+GameServer.prototype.updatePlayer = function(x, y) {
+	this.sx = x;
+	this.sy = y;
 }
 
 GameServer.prototype.nofityClient = function(packet) {
