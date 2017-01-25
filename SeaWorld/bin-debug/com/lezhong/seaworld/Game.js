@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 /**
  *
  * @author
@@ -6,8 +9,7 @@
 var Game = (function () {
     function Game() {
     }
-    var d = __define,c=Game,p=c.prototype;
-    p.startup = function (contentView, data) {
+    Game.prototype.startup = function (contentView, data) {
         var scene = new GameScene(contentView);
         scene.data = data;
         scene.setBackground(new MapBackground());
@@ -17,5 +19,5 @@ var Game = (function () {
     };
     return Game;
 }());
-egret.registerClass(Game,'Game');
+__reflect(Game.prototype, "Game");
 //# sourceMappingURL=Game.js.map

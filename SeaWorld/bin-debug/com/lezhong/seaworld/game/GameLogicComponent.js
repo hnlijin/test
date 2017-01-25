@@ -1,3 +1,11 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 /**
  *
  * @author
@@ -6,15 +14,15 @@
 var GameLogicComponent = (function (_super) {
     __extends(GameLogicComponent, _super);
     function GameLogicComponent(ower) {
-        _super.call(this);
-        this._ower = null;
-        this._netSevice = null;
-        this._ower = ower;
-        this._netSevice = this._ower.getComponent("net");
-        this._netSevice.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onReceiveMessage, this);
+        var _this = _super.call(this) || this;
+        _this._ower = null;
+        _this._netSevice = null;
+        _this._ower = ower;
+        _this._netSevice = _this._ower.getComponent("net");
+        _this._netSevice.addEventListener(egret.ProgressEvent.SOCKET_DATA, _this.onReceiveMessage, _this);
+        return _this;
     }
-    var d = __define,c=GameLogicComponent,p=c.prototype;
-    p.onReceiveMessage = function (evt) {
+    GameLogicComponent.prototype.onReceiveMessage = function (evt) {
         var offset = 0;
         var byte = evt.data;
         var packetId = byte.dataView.getUint8(offset);
@@ -74,13 +82,13 @@ var GameLogicComponent = (function (_super) {
                 break;
         }
     };
-    GameLogicComponent.GAME_READY = 1;
-    GameLogicComponent.GAME_START = 2;
-    GameLogicComponent.ADD_PLAYER = 10;
-    GameLogicComponent.REMOVE_PALYER = 11;
-    GameLogicComponent.UPDATE_PLAYER = 12;
-    GameLogicComponent.UPDATE_FISH = 13;
     return GameLogicComponent;
 }(Component));
-egret.registerClass(GameLogicComponent,'GameLogicComponent');
+GameLogicComponent.GAME_READY = 1;
+GameLogicComponent.GAME_START = 2;
+GameLogicComponent.ADD_PLAYER = 10;
+GameLogicComponent.REMOVE_PALYER = 11;
+GameLogicComponent.UPDATE_PLAYER = 12;
+GameLogicComponent.UPDATE_FISH = 13;
+__reflect(GameLogicComponent.prototype, "GameLogicComponent");
 //# sourceMappingURL=GameLogicComponent.js.map

@@ -2,18 +2,13 @@
 var game_file_list = [
     //以下为自动修改，请勿修改
     //----auto game_file_list start----
-	"libs/modules/egret/egret.js",
-	"libs/modules/egret/egret.native.js",
-	"libs/modules/game/game.js",
-	"libs/modules/game/game.native.js",
-	"libs/modules/tween/tween.js",
-	"libs/modules/res/res.js",
-	"libs/modules/socket/socket.js",
-	"bin-debug/JoystickCommon.js",
-	"bin-debug/LoadingUI.js",
-	"bin-debug/MButton.js",
-	"bin-debug/Main.js",
-	"bin-debug/NetSevice.js",
+	"libs/modules/egret/egret.min.js",
+	"libs/modules/egret/egret.native.min.js",
+	"libs/modules/game/game.min.js",
+	"libs/modules/tween/tween.min.js",
+	"libs/modules/res/res.min.js",
+	"libs/modules/socket/socket.min.js",
+	"main.min.js",
 	//----auto game_file_list end----
 ];
 

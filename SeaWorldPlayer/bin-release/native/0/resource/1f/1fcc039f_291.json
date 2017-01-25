@@ -1,0 +1,18 @@
+{
+	"groups":[{
+			"keys":"Joystick_png,JoystickBG_png",
+			"name":"preload"
+		}],
+	"resources":[
+		{
+			"name":"Joystick_png",
+			"type":"image",
+			"url":"assets/Joystick.png"
+		},
+		{
+			"name":"JoystickBG_png",
+			"type":"image",
+			"url":"assets/JoystickBG.png"
+		}
+	]
+}

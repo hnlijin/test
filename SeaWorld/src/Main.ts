@@ -90,8 +90,8 @@ class Main extends egret.DisplayObjectContainer {
     private createGameScene():void  {
         var data:Object = {};
         data["server_info"] = {};
-        data["server_info"]["host"] = "192.168.31.118";
-        data["server_info"]["host"] = "10.0.33.163";
+        data["server_info"]["host"] = "127.0.0.1";
+        //data["server_info"]["host"] = "10.0.33.163";
         data["server_info"]["port"] = 9001;
         data["map"] = {};
         new Game().startup(this,data);

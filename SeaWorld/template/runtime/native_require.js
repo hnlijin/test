@@ -2,25 +2,13 @@
 var game_file_list = [
     //以下为自动修改，请勿修改
     //----auto game_file_list start----
-	"libs/modules/egret/egret.js",
-	"libs/modules/egret/egret.native.js",
-	"libs/modules/game/game.js",
-	"libs/modules/game/game.native.js",
-	"libs/modules/tween/tween.js",
-	"libs/modules/res/res.js",
-	"libs/modules/socket/socket.js",
-	"bin-debug/LoadingUI.js",
-	"bin-debug/Main.js",
-	"bin-debug/com/lezhong/seaworld/Game.js",
-	"bin-debug/com/lezhong/seaworld/core/Component.js",
-	"bin-debug/com/lezhong/seaworld/core/GameMap.js",
-	"bin-debug/com/lezhong/seaworld/core/GameObject.js",
-	"bin-debug/com/lezhong/seaworld/core/GameScene.js",
-	"bin-debug/com/lezhong/seaworld/game/GameFactory.js",
-	"bin-debug/com/lezhong/seaworld/game/GameLogicComponent.js",
-	"bin-debug/com/lezhong/seaworld/game/MapBackground.js",
-	"bin-debug/com/lezhong/seaworld/game/NetSevice.js",
-	"bin-debug/com/lezhong/seaworld/game/PlayerView.js",
+	"libs/modules/egret/egret.min.js",
+	"libs/modules/egret/egret.native.min.js",
+	"libs/modules/game/game.min.js",
+	"libs/modules/tween/tween.min.js",
+	"libs/modules/res/res.min.js",
+	"libs/modules/socket/socket.min.js",
+	"main.min.js",
 	//----auto game_file_list end----
 ];
 
