@@ -83,11 +83,11 @@ var Main = (function (_super) {
     Main.prototype.createGameScene = function () {
         var data = {};
         data["server_info"] = {};
-        data["server_info"]["host"] = "192.168.1.106";
-        //data["server_info"]["host"] = "10.0.33.163";
-        data["server_info"]["port"] = 9001;
+        data["server_info"]["host"] = RES.getRes("gameconfig_json")["host"];
+        data["server_info"]["port"] = RES.getRes("gameconfig_json")["port"];
         data["map"] = {};
         new Game().startup(this, data);
+        console.log("kkk:", RES.getRes("gameconfig_json")["host"]);
     };
     return Main;
 }(egret.DisplayObjectContainer));

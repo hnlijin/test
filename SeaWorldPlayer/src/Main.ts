@@ -96,8 +96,9 @@ class Main extends egret.DisplayObjectContainer {
         let stageW:number = this.stage.stageWidth;
         let stageH:number = this.stage.stageHeight;
         
-//        this.netSevice = new NetSevice("192.168.31.118",9002);
-        this.netSevice = new NetSevice("10.0.33.163",9002);
+        let host = RES.getRes("gameconfig_json")["host"];
+        let port = RES.getRes("gameconfig_json")["port"];
+        this.netSevice = new NetSevice(host, port);
         this.netSevice.addEventListener(egret.ProgressEvent.SOCKET_DATA,this.onReceiveMessage, this);
         this.netSevice.addEventListener(egret.Event.CONNECT,this.onSocketOpen,this);
         this.netSevice.addEventListener(egret.Event.CLOSE,this.onSocketClose,this);

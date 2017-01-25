@@ -1,18 +1,25 @@
 {
-	"groups":[{
-			"keys":"Joystick_png,JoystickBG_png",
-			"name":"preload"
-		}],
-	"resources":[
+	"groups": [
 		{
-			"name":"Joystick_png",
-			"type":"image",
-			"url":"assets/Joystick.png"
+			"keys": "Joystick_png,JoystickBG_png,gameconfig_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"name": "Joystick_png",
+			"type": "image",
+			"url": "assets/Joystick.png"
 		},
 		{
-			"name":"JoystickBG_png",
-			"type":"image",
-			"url":"assets/JoystickBG.png"
+			"name": "JoystickBG_png",
+			"type": "image",
+			"url": "assets/JoystickBG.png"
+		},
+		{
+			"name": "gameconfig_json",
+			"type": "json",
+			"url": "config/gameconfig.json"
 		}
 	]
 }
