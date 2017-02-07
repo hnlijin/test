@@ -81,6 +81,9 @@ class GameLogicComponent extends Component
                     var id: number = byte.dataView.getUint8(offset += 1);
                     var x: number = byte.dataView.getUint8(offset += 1);
                     var y: number = byte.dataView.getUint8(offset += 1);
+                    
+                    console.log("id:", id, x, y);
+                    
                     if (id > 0) {
                         var gameObject: GameObject = this._ower.map.getGameObjectForId(id);
                         if (gameObject != null) {

@@ -1,11 +1,3 @@
-var __reflect = (this && this.__reflect) || function (p, c, t) {
-    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
-};
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
 /**
  *
  * @author
@@ -14,41 +6,41 @@ var __extends = (this && this.__extends) || function (d, b) {
 var JoystickCommon = (function (_super) {
     __extends(JoystickCommon, _super);
     function JoystickCommon() {
-        var _this = _super.call(this) || this;
-        _this.joystickBG = null;
-        _this.joystickDot = null;
-        _this.radius = 100;
-        _this.offsetX = 0;
-        _this.offsetY = 0;
-        _this.touchEnabled = true;
-        _this.joystickBG = new egret.Bitmap();
+        _super.call(this);
+        this.joystickBG = null;
+        this.joystickDot = null;
+        this.radius = 100;
+        this.offsetX = 0;
+        this.offsetY = 0;
+        this.touchEnabled = true;
+        this.joystickBG = new egret.Bitmap();
         var texture = RES.getRes("JoystickBG_png");
-        _this.joystickBG.texture = texture;
-        _this.addChild(_this.joystickBG);
-        _this.joystickDot = new egret.Bitmap();
+        this.joystickBG.texture = texture;
+        this.addChild(this.joystickBG);
+        this.joystickDot = new egret.Bitmap();
         var texture = RES.getRes("Joystick_png");
-        _this.joystickDot.texture = texture;
-        _this.addChild(_this.joystickDot);
-        _this.radius = _this.joystickBG.width / 2 - _this.joystickDot.width / 3;
-        _this.resetPosition();
-        _this.addEventListener(egret.Event.ADDED_TO_STAGE, _this.onAddToStage, _this);
-        return _this;
+        this.joystickDot.texture = texture;
+        this.addChild(this.joystickDot);
+        this.radius = this.joystickBG.width / 2 - this.joystickDot.width / 3;
+        this.resetPosition();
+        this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
-    JoystickCommon.prototype.resetPosition = function () {
+    var d = __define,c=JoystickCommon,p=c.prototype;
+    p.resetPosition = function () {
         this.joystickBG.x = -this.joystickBG.width / 2;
         this.joystickBG.y = -this.joystickBG.height / 2;
         this.joystickDot.x = -this.joystickDot.width / 2;
         this.joystickDot.y = -this.joystickDot.height / 2;
     };
-    JoystickCommon.prototype.onAddToStage = function (evt) {
+    p.onAddToStage = function (evt) {
         this.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchBegin, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onTouchMove, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onTouchEnd, this);
         this.stage.addEventListener(egret.TouchEvent.TOUCH_RELEASE_OUTSIDE, this.onTouchCancel, this);
     };
-    JoystickCommon.prototype.onTouchBegin = function (evt) {
+    p.onTouchBegin = function (evt) {
     };
-    JoystickCommon.prototype.onTouchMove = function (evt) {
+    p.onTouchMove = function (evt) {
         var p = this.globalToLocal(evt.stageX, evt.stageY);
         var lx = p.x;
         var ly = p.y;
@@ -76,12 +68,13 @@ var JoystickCommon = (function (_super) {
             this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, { x: this.offsetX, y: this.offsetY }));
         }
     };
-    JoystickCommon.prototype.onTouchEnd = function (evt) {
+    p.onTouchEnd = function (evt) {
         this.resetPosition();
     };
-    JoystickCommon.prototype.onTouchCancel = function (evt) {
+    p.onTouchCancel = function (evt) {
         this.resetPosition();
     };
     return JoystickCommon;
 }(egret.DisplayObjectContainer));
-__reflect(JoystickCommon.prototype, "JoystickCommon");
+egret.registerClass(JoystickCommon,'JoystickCommon');
+//# sourceMappingURL=JoystickCommon.js.map

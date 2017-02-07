@@ -1,6 +1,3 @@
-var __reflect = (this && this.__reflect) || function (p, c, t) {
-    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
-};
 /**
  *
  * @author
@@ -23,61 +20,56 @@ var GameScene = (function () {
         contentView.addChild(this._ui);
         contentView.addChild(this._tip);
     }
-    Object.defineProperty(GameScene, "currentScene", {
-        get: function () {
+    var d = __define,c=GameScene,p=c.prototype;
+    d(GameScene, "currentScene"
+        ,function () {
             return GameScene._currentScene;
-        },
-        set: function (scene) {
+        }
+        ,function (scene) {
             GameScene._currentScene = scene;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(GameScene.prototype, "data", {
-        get: function () {
+        }
+    );
+    d(p, "data"
+        ,function () {
             return this._data;
-        },
-        set: function (data) {
+        }
+        ,function (data) {
             this._data = data;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    GameScene.prototype.addComponent = function (name, component) {
+        }
+    );
+    p.addComponent = function (name, component) {
         this._components[name] = component;
         component.onEnter();
     };
-    GameScene.prototype.getComponent = function (name) {
+    p.getComponent = function (name) {
         return this._components[name];
     };
-    GameScene.prototype.removeComponent = function (name) {
+    p.removeComponent = function (name) {
         var component = this._components[name];
         if (component != null) {
             component.onEixt();
             delete this._components[name];
         }
     };
-    GameScene.prototype.removeAllComponent = function () {
+    p.removeAllComponent = function () {
         for (var name in this._components) {
             this.removeComponent(name);
         }
     };
-    Object.defineProperty(GameScene.prototype, "map", {
-        get: function () {
+    d(p, "map"
+        ,function () {
             return this._gameMap;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    GameScene.prototype.setBackground = function (background) {
+        }
+    );
+    p.setBackground = function (background) {
         this._background.removeChildren();
         this._background.addChildAt(background, 0);
     };
-    GameScene.prototype.getBackground = function () {
+    p.getBackground = function () {
         return this._background;
     };
+    GameScene._currentScene = null;
     return GameScene;
 }());
-GameScene._currentScene = null;
-__reflect(GameScene.prototype, "GameScene");
+egret.registerClass(GameScene,'GameScene');
 //# sourceMappingURL=GameScene.js.map
