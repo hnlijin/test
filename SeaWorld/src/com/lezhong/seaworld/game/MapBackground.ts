@@ -23,9 +23,9 @@ class MapBackground extends egret.Sprite
 	
 	public onResize():void
 	{
-        this.graphics.clear();
-        this.graphics.beginFill(0x00FF00);
-        this.graphics.drawRect(0,0,this.stage.stageWidth,this.stage.stageHeight);
-        this.graphics.endFill();
+//        this.graphics.clear();
+//        this.graphics.beginFill(0x00FF00);
+//        this.graphics.drawRect(0,0,this.stage.stageWidth,this.stage.stageHeight);
+//        this.graphics.endFill();
 	}
 }

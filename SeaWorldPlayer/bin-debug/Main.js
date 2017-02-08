@@ -127,6 +127,7 @@ var Main = (function (_super) {
         this.textfield.visible = true;
         this.okButton.visible = true;
         this.desc.visible = true;
+        this.gaming = false;
     };
     p.onReceiveMessage = function (evt) {
     };
@@ -153,6 +154,7 @@ var Main = (function (_super) {
         }
         if (this.textfield.text.length > 0) {
             this.netSevice.joinGame(this.textfield.text);
+            this.gaming = true;
             this.joystickCommon.visible = true;
             this.textfield.visible = false;
             this.okButton.visible = false;
@@ -163,10 +165,12 @@ var Main = (function (_super) {
         }
     };
     p.onJoystickCommonChange = function (evt) {
-        var p = evt.data;
-        var x = p["x"];
-        var y = p["y"];
-        this.netSevice.gameControl(x, y);
+        if (this.gaming) {
+            var p = evt.data;
+            var x = p["x"];
+            var y = p["y"];
+            this.netSevice.gameControl(x, y);
+        }
     };
     return Main;
 }(egret.DisplayObjectContainer));

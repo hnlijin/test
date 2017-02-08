@@ -87,6 +87,7 @@ class Main extends egret.DisplayObjectContainer {
     private txtMessages: egret.TextField;
     private joystickCommon:JoystickCommon;
     private desc:egret.TextField;
+    private gaming: Boolean;
 
     /**
      * 创建游戏场景
@@ -156,6 +157,7 @@ class Main extends egret.DisplayObjectContainer {
         this.textfield.visible = true;
         this.okButton.visible = true;
         this.desc.visible = true;
+        this.gaming = false;
     }
     
     private onReceiveMessage(evt:egret.ProgressEvent)
@@ -191,6 +193,7 @@ class Main extends egret.DisplayObjectContainer {
         
         if (this.textfield.text.length > 0) {
             this.netSevice.joinGame(this.textfield.text);
+            this.gaming = true;
             this.joystickCommon.visible = true;
             this.textfield.visible = false;
             this.okButton.visible = false;
@@ -202,9 +205,12 @@ class Main extends egret.DisplayObjectContainer {
     
     private onJoystickCommonChange(evt:egret.Event)
     {
-        var p:Object = evt.data as Object;
-        var x = p["x"];
-        var y = p["y"]
-        this.netSevice.gameControl(x, y);
+        if (this.gaming)
+        {
+            var p: Object = evt.data as Object;
+            var x = p["x"];
+            var y = p["y"]
+            this.netSevice.gameControl(x,y);
+        }
     }
 }

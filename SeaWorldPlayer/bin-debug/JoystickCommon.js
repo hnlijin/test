@@ -22,15 +22,18 @@ var JoystickCommon = (function (_super) {
         this.joystickDot.texture = texture;
         this.addChild(this.joystickDot);
         this.radius = this.joystickBG.width / 2 - this.joystickDot.width / 3;
-        this.resetPosition();
+        this.resetPosition(false);
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     var d = __define,c=JoystickCommon,p=c.prototype;
-    p.resetPosition = function () {
+    p.resetPosition = function (sendEvent) {
         this.joystickBG.x = -this.joystickBG.width / 2;
         this.joystickBG.y = -this.joystickBG.height / 2;
         this.joystickDot.x = -this.joystickDot.width / 2;
         this.joystickDot.y = -this.joystickDot.height / 2;
+        if (sendEvent) {
+            this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, { x: 0, y: 0 }));
+        }
     };
     p.onAddToStage = function (evt) {
         this.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchBegin, this);
@@ -69,10 +72,10 @@ var JoystickCommon = (function (_super) {
         }
     };
     p.onTouchEnd = function (evt) {
-        this.resetPosition();
+        this.resetPosition(true);
     };
     p.onTouchCancel = function (evt) {
-        this.resetPosition();
+        this.resetPosition(true);
     };
     return JoystickCommon;
 }(egret.DisplayObjectContainer));

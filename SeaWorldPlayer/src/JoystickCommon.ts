@@ -28,17 +28,21 @@ class JoystickCommon extends egret.DisplayObjectContainer
         this.addChild(this.joystickDot);
         
         this.radius = this.joystickBG.width / 2 - this.joystickDot.width / 3;
-        this.resetPosition();
+        this.resetPosition(false);
         
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
 	}
 	
-	private resetPosition():void
+	private resetPosition(sendEvent:Boolean):void
 	{
         this.joystickBG.x = -this.joystickBG.width / 2;
         this.joystickBG.y = -this.joystickBG.height / 2;
         this.joystickDot.x = -this.joystickDot.width / 2;
         this.joystickDot.y = -this.joystickDot.height / 2;
+        
+        if (sendEvent) {
+            this.dispatchEvent(new egret.Event(egret.Event.CHANGE,false,false,{ x: 0,y: 0 }));
+        }
 	}
 	
     private onAddToStage(evt:egret.Event):void
@@ -87,11 +91,11 @@ class JoystickCommon extends egret.DisplayObjectContainer
     
     private onTouchEnd(evt:egret.TouchEvent):void
     {
-        this.resetPosition();
+        this.resetPosition(true);
     }
     
     private onTouchCancel(evt:egret.TouchEvent):void
     {
-        this.resetPosition();
+        this.resetPosition(true);
     }
 }
