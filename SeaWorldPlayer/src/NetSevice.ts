@@ -59,8 +59,8 @@ class NetSevice extends egret.EventDispatcher
         var arrayBuff = new ArrayBuffer(3);
         var byte = new egret.ByteArray(arrayBuff);
         byte.dataView.setUint8(0,2);
-        byte.dataView.setUint8(1,x);
-        byte.dataView.setUint8(2,y);
+        byte.dataView.setInt8(1,x);
+        byte.dataView.setInt8(2,y);
         this.webSocket.writeBytes(byte);
     }
     

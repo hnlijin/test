@@ -79,8 +79,8 @@ class GameLogicComponent extends Component
                 for (var i: number = 0; i < len; i += 1)
                 {
                     var id: number = byte.dataView.getUint8(offset += 1);
-                    var x: number = byte.dataView.getUint8(offset += 1);
-                    var y: number = byte.dataView.getUint8(offset += 1);
+                    var x: number = byte.dataView.getInt8(offset += 1);
+                    var y: number = byte.dataView.getInt8(offset += 1);
                     
                     console.log("id:", id, x, y);
                     

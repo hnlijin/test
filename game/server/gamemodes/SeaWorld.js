@@ -5,6 +5,7 @@ function SeaWorld() {
     this.name = "Sea world";
     this.players = [];
     this.ids = 0;
+    this.speed = 2;
 }
 
 module.exports = SeaWorld;

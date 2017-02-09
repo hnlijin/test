@@ -66,8 +66,9 @@ var JoystickCommon = (function (_super) {
         this.joystickDot.x = lx - this.joystickDot.width / 2;
         this.joystickDot.y = ly - this.joystickDot.height / 2;
         if (this.offsetX != lx || this.offsetY != ly) {
-            this.offsetX = lx;
-            this.offsetY = ly;
+            this.offsetX = Math.ceil(lx / this.radius * 100);
+            this.offsetY = Math.ceil(ly / this.radius * 100);
+            console.log("pos,", this.offsetX, this.offsetY);
             this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, { x: this.offsetX, y: this.offsetY }));
         }
     };

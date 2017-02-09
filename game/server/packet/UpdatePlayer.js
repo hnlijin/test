@@ -17,9 +17,9 @@ UpdatePlayer.prototype.addPlayer = function(player) {
 		this.offset += 1;
 		this.view.setUint8(this.offset, player.id)
 		this.offset += 1;
-		this.view.setUint8(this.offset, player.x)
+		this.view.setInt8(this.offset, player.x)
 		this.offset += 1;
-		this.view.setUint8(this.offset, player.y)
+		this.view.setInt8(this.offset, player.y)
 	}
 }
 

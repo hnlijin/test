@@ -12,7 +12,7 @@ function GameServer()
 	this.config = {
 		serverPort: 9001,
 		serverGamemode: 1,
-		tickTime: 1,
+		tickTime: 100,
 	};
 
 	this.packet = packet;
@@ -71,9 +71,9 @@ GameServer.prototype.removePlayer = function(removeClient) {
     }.bind(this));
 }
 
-GameServer.prototype.updatePlayer = function(x, y) {
-	this.sx = x;
-	this.sy = y;
+GameServer.prototype.updatePlayer = function(sx, sy, gameServer) {
+    this.sx = gameServer.gameMode.speed * sx / 100;
+    this.sy = gameServer.gameMode.speed * sy / 100;
 }
 
 GameServer.prototype.nofityClient = function(packet) {
