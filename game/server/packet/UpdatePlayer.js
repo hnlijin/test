@@ -2,7 +2,7 @@ var constants = require('./constants')
 
 function UpdatePlayer(playerCount) {
 	this.playerCount = playerCount;
-	this.buf = new ArrayBuffer(2 + playerCount * 3);
+	this.buf = new ArrayBuffer(2 + playerCount * 9);
     this.view = new DataView(this.buf);
     this.offset = 0
     this.view.setUint8(this.offset, constants.UPDATE_PLAYER, true);
@@ -17,9 +17,9 @@ UpdatePlayer.prototype.addPlayer = function(player) {
 		this.offset += 1;
 		this.view.setUint8(this.offset, player.id)
 		this.offset += 1;
-		this.view.setInt8(this.offset, player.x)
-		this.offset += 1;
-		this.view.setInt8(this.offset, player.y)
+		this.view.setInt32(this.offset, player.x)
+		this.offset += 4;
+		this.view.setInt32(this.offset, player.y)
 	}
 }
 

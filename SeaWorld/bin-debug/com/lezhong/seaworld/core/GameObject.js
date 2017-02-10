@@ -48,4 +48,3 @@ var GameObject = (function (_super) {
     return GameObject;
 }(egret.DisplayObjectContainer));
 egret.registerClass(GameObject,'GameObject');
-//# sourceMappingURL=GameObject.js.map

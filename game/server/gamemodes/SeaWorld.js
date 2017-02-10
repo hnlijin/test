@@ -5,7 +5,7 @@ function SeaWorld() {
     this.name = "Sea world";
     this.players = [];
     this.ids = 0;
-    this.speed = 2;
+    this.speed = 5;
 }
 
 module.exports = SeaWorld;
@@ -31,9 +31,6 @@ SeaWorld.prototype.addPlayer = function(newPlayer) {
 
 SeaWorld.prototype.removePlayer = function(player) {
     this.players.splice(this.players.indexOf(player), 1);
-}
-
-SeaWorld.prototype.playerMove = function(player, speedx, speedy) {
 }
 
 SeaWorld.prototype.getID = function() {

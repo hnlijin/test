@@ -18,4 +18,3 @@ var GameFactory = (function () {
     return GameFactory;
 }());
 egret.registerClass(GameFactory,'GameFactory');
-//# sourceMappingURL=GameFactory.js.map

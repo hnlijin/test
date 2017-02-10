@@ -57,9 +57,9 @@ var GameLogicComponent = (function (_super) {
                     var len = byte.dataView.getUint8(offset += 1);
                     for (var i = 0; i < len; i += 1) {
                         var id = byte.dataView.getUint8(offset += 1);
-                        var x = byte.dataView.getInt8(offset += 1);
-                        var y = byte.dataView.getInt8(offset += 1);
-                        console.log("id:", id, x, y);
+                        var x = byte.dataView.getInt32(offset += 1);
+                        var y = byte.dataView.getInt32(offset += 4);
+                        console.log("id:", i, id, x, y);
                         if (id > 0) {
                             var gameObject = this._ower.map.getGameObjectForId(id);
                             if (gameObject != null) {
@@ -84,4 +84,3 @@ var GameLogicComponent = (function (_super) {
     return GameLogicComponent;
 }(Component));
 egret.registerClass(GameLogicComponent,'GameLogicComponent');
-//# sourceMappingURL=GameLogicComponent.js.map
