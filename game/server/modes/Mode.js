@@ -12,6 +12,10 @@ Mode.prototype.onServerInit = function() {
     this.gameServer.run = true;
 };
 
+Mode.prototype.onClinetInit = function(client) {
+
+}
+
 Mode.prototype.onTick = function() {
     // Called on every game tick 
 };

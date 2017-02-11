@@ -16,3 +16,4 @@ var Component = (function (_super) {
     return Component;
 }(egret.EventDispatcher));
 egret.registerClass(Component,'Component');
+//# sourceMappingURL=Component.js.map

@@ -32,6 +32,7 @@ GameServer.prototype.start = function()
         client.on('message', client.packetHandler.handleMessage.bind(client.packetHandler));
 		client.on('close', client.packetHandler.close.bind(client.packetHandler));
 		client.on('error', client.packetHandler.close.bind(client.packetHandler));
+		this.gameMode.onClinetInit(client);
 	}.bind(this));
 
 	this.socketServer.on('listening', function()
@@ -56,7 +57,7 @@ GameServer.prototype.mainLoop = function() {
 
 GameServer.prototype.addPlayer = function(newClient) {
 	var newPlayer = new entity.Player(this.gameMode.getID(), newClient);
-	newClient.updatePlayer = this.updatePlayer.bind(newPlayer); 
+	newClient.onUpdateSpeed = newPlayer.onUpdateSpeed.bind(newPlayer); 
     this.gameMode.onPlayerInit(newPlayer);
     return newPlayer;
 }
@@ -64,16 +65,10 @@ GameServer.prototype.addPlayer = function(newClient) {
 GameServer.prototype.removePlayer = function(removeClient) {
 	this.gameMode.players.forEach(function each(player) {
 		if (player.client == removeClient) {
-			this.nofityClient(new this.packet.RemovePlayer(player));
 			this.gameMode.onRemovePlayer(player);
 			return;
 		}
     }.bind(this));
-}
-
-GameServer.prototype.updatePlayer = function(sx, sy, gameServer) {
-    this.sx = gameServer.gameMode.speed * sx / 100;
-    this.sy = gameServer.gameMode.speed * sy / 100;
 }
 
 GameServer.prototype.nofityClient = function(packet) {
@@ -97,7 +92,6 @@ GameServer.prototype.sendPacket = function(packet) {
             this.removeAllListeners();
         }
     } else {
-    	this.run = false;
         this.emit('close');
         this.removeAllListeners();
     }

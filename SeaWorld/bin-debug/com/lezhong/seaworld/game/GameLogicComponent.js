@@ -18,54 +18,54 @@ var GameLogicComponent = (function (_super) {
         var offset = 0;
         var byte = evt.data;
         var packetId = byte.dataView.getUint8(offset);
+        offset += 1;
         console.log("packetId:", packetId);
         switch (packetId) {
             case GameLogicComponent.ADD_PLAYER:
                 {
-                    offset += 1;
                     var count = byte.dataView.getUint8(offset);
+                    offset += 1;
                     for (var i = 0; i < count; i++) {
-                        var id = byte.dataView.getUint8(offset += 1);
+                        var id = byte.dataView.getUint8(offset);
+                        offset += 1;
                         var name = "";
                         var x = 0;
                         var y = 0;
-                        var len = byte.dataView.getUint8(offset += 1);
+                        var nameLen = byte.dataView.getUint8(offset);
                         offset += 1;
-                        for (var i = 0; i < len; i += 1) {
-                            var charCode = byte.dataView.getUint16(offset += i * 2, true);
-                            if (charCode == 0) {
-                                break;
+                        for (var j = 0; j < nameLen; j += 1) {
+                            var charCode = byte.dataView.getUint16(offset, true);
+                            offset += 2;
+                            if (charCode > 0) {
+                                name += String.fromCharCode(charCode);
                             }
-                            name += String.fromCharCode(charCode);
                         }
-                        x = byte.dataView.getInt32(offset += 1);
-                        y = byte.dataView.getInt32(offset += 4);
-                        console.log("add_player:", id, len, name, x, y);
+                        x = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        y = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        console.log("add_player:", id, nameLen, name, x, y);
                         var data = {};
                         data["id"] = id;
                         data["name"] = name;
                         var gameObject = GameFactory.createGameObject(this._ower.map, data);
+                        gameObject.updatePosition(x, y);
                         this._ower.map.addGameObject(gameObject);
-                    }
-                }
-                break;
-            case GameLogicComponent.REMOVE_PALYER:
-                {
-                    var id = byte.dataView.getUint8(offset += 1);
-                    console.log("remove_player:", id);
-                    if (id > 0) {
-                        this._ower.map.removeGameObjectForId(id);
                     }
                 }
                 break;
             case GameLogicComponent.UPDATE_PLAYER:
                 {
-                    var len = byte.dataView.getUint8(offset += 1);
+                    var len = byte.dataView.getUint8(offset);
+                    offset += 1;
                     for (var i = 0; i < len; i += 1) {
-                        var id = byte.dataView.getUint8(offset += 1);
-                        var x = byte.dataView.getInt32(offset += 1);
-                        var y = byte.dataView.getInt32(offset += 4);
-                        console.log("id:", i, id, x, y);
+                        var id = byte.dataView.getUint8(offset);
+                        offset += 1;
+                        var x = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        var y = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        console.log("update_player:", i, id, x, y);
                         if (id > 0) {
                             var gameObject = this._ower.map.getGameObjectForId(id);
                             if (gameObject != null) {
@@ -75,8 +75,78 @@ var GameLogicComponent = (function (_super) {
                     }
                 }
                 break;
+            case GameLogicComponent.REMOVE_PALYER:
+                {
+                    var id = byte.dataView.getUint8(offset);
+                    offset += 1;
+                    console.log("remove_player:", id);
+                    if (id > 0) {
+                        this._ower.map.removeGameObjectForId(id);
+                    }
+                }
+                break;
+            case GameLogicComponent.ADD_FISH:
+                {
+                    var count = byte.dataView.getUint8(offset);
+                    offset += 1;
+                    for (var i = 0; i < count; i++) {
+                        var id = byte.dataView.getUint8(offset);
+                        offset += 1;
+                        var name = "";
+                        var x = 0;
+                        var y = 0;
+                        var nameLen = byte.dataView.getUint8(offset);
+                        offset += 1;
+                        for (var j = 0; j < nameLen; j += 1) {
+                            var charCode = byte.dataView.getUint16(offset, true);
+                            offset += 2;
+                            if (charCode > 0) {
+                                name += String.fromCharCode(charCode);
+                            }
+                        }
+                        x = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        y = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        console.log("add_fish:", i, "=>", id, nameLen, name, x, y, offset);
+                        var data = {};
+                        data["id"] = id;
+                        data["name"] = name;
+                        var gameObject = GameFactory.createGameObject(this._ower.map, data);
+                        gameObject.updatePosition(x, y);
+                        this._ower.map.addGameObject(gameObject);
+                    }
+                }
+                break;
             case GameLogicComponent.UPDATE_FISH:
                 {
+                    var len = byte.dataView.getUint8(offset);
+                    offset += 1;
+                    for (var i = 0; i < len; i += 1) {
+                        var id = byte.dataView.getUint8(offset);
+                        offset += 1;
+                        var x = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        var y = byte.dataView.getInt32(offset);
+                        offset += 4;
+                        console.log("update_fish:", i, id, x, y);
+                        if (id > 0) {
+                            var gameObject = this._ower.map.getGameObjectForId(id);
+                            if (gameObject != null) {
+                                gameObject.updatePosition(x, y);
+                            }
+                        }
+                    }
+                }
+                break;
+            case GameLogicComponent.REMOVE_FISH:
+                {
+                    var id = byte.dataView.getUint8(offset);
+                    offset += 1;
+                    console.log("remove_fish:", id);
+                    if (id > 0) {
+                        this._ower.map.removeGameObjectForId(id);
+                    }
                 }
                 break;
         }
@@ -92,3 +162,4 @@ var GameLogicComponent = (function (_super) {
     return GameLogicComponent;
 }(Component));
 egret.registerClass(GameLogicComponent,'GameLogicComponent');
+//# sourceMappingURL=GameLogicComponent.js.map
