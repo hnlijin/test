@@ -26,4 +26,3 @@ var MapBackground = (function (_super) {
     return MapBackground;
 }(egret.Sprite));
 egret.registerClass(MapBackground,'MapBackground');
-//# sourceMappingURL=MapBackground.js.map

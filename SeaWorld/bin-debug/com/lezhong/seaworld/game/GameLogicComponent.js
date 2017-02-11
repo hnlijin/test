@@ -92,4 +92,3 @@ var GameLogicComponent = (function (_super) {
     return GameLogicComponent;
 }(Component));
 egret.registerClass(GameLogicComponent,'GameLogicComponent');
-//# sourceMappingURL=GameLogicComponent.js.map
