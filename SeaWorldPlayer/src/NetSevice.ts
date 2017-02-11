@@ -46,7 +46,7 @@ class NetSevice extends egret.EventDispatcher
     {
         var arrayBuff = new ArrayBuffer(2 + name.length * 2);
         var byte = new egret.ByteArray(arrayBuff);
-        byte.dataView.setUint8(0,1);
+        byte.dataView.setUint8(0,3);
         byte.dataView.setUint8(1,name.length);
         for(var i = 0; i < name.length; i += 1) {
             byte.dataView.setUint16(i * 2 + 2, name.charCodeAt(i), true);
@@ -58,7 +58,7 @@ class NetSevice extends egret.EventDispatcher
     public gameControl(x:number, y:number): void {
         var arrayBuff = new ArrayBuffer(3);
         var byte = new egret.ByteArray(arrayBuff);
-        byte.dataView.setUint8(0,2);
+        byte.dataView.setUint8(0,4);
         byte.dataView.setInt8(1,x);
         byte.dataView.setInt8(2,y);
         this.webSocket.writeBytes(byte);

@@ -154,6 +154,7 @@ class Main extends egret.DisplayObjectContainer {
     private reset():void
     {
         this.joystickCommon.visible = false;
+        this.joystickCommon.enabled = false;
         this.textfield.visible = true;
         this.okButton.visible = true;
         this.desc.visible = true;
@@ -198,6 +199,7 @@ class Main extends egret.DisplayObjectContainer {
             this.textfield.visible = false;
             this.okButton.visible = false;
             this.desc.visible = false;
+            this.joystickCommon.enabled = true;
         } else {
             this.txtMessages.text = "请输入昵称！";
         }

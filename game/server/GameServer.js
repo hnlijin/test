@@ -4,8 +4,9 @@ var os = require('os');
 var WebSocket = require('ws');
 var common = require('./common');
 var GamePacketHandler = require('./GamePacketHandler')
-var Gamemode = require('./gamemodes');
+var Gamemode = require('./modes');
 var packet = require('./packet');
+var entity = require('./entity')
 
 function GameServer()
 {
@@ -22,7 +23,7 @@ module.exports = GameServer;
 
 GameServer.prototype.start = function()
 {
-	this.gameMode = Gamemode.get(this.config.serverGamemode);
+	this.gameMode = Gamemode.get(this.config.serverGamemode, this);
 	this.socketServer = new WebSocket.Server({port: this.config.serverPort}, this.startGame.bind(this));
 	this.socketServer.on('connection', function(client)
 	{		
@@ -41,12 +42,12 @@ GameServer.prototype.start = function()
 
 GameServer.prototype.startGame = function()
 {
-	this.gameMode.onServerInit(this);
+	this.gameMode.onServerInit();
 	setInterval(this.mainLoop.bind(this), this.config.tickTime);
 }
 
 GameServer.prototype.gamemodeTick = function() {
-    this.gameMode.onTick(this);
+    this.gameMode.onTick();
 }
 
 GameServer.prototype.mainLoop = function() {
@@ -54,10 +55,9 @@ GameServer.prototype.mainLoop = function() {
 }
 
 GameServer.prototype.addPlayer = function(newClient) {
-	var newPlayer = new Gamemode.Player(this.gameMode.getID(), newClient);
+	var newPlayer = new entity.Player(this.gameMode.getID(), newClient);
 	newClient.updatePlayer = this.updatePlayer.bind(newPlayer); 
-    this.gameMode.addPlayer(newPlayer);
-    this.nofityClient(new this.packet.AddPlayer(newPlayer));
+    this.gameMode.onPlayerInit(newPlayer);
     return newPlayer;
 }
 
@@ -65,7 +65,7 @@ GameServer.prototype.removePlayer = function(removeClient) {
 	this.gameMode.players.forEach(function each(player) {
 		if (player.client == removeClient) {
 			this.nofityClient(new this.packet.RemovePlayer(player));
-			this.gameMode.removePlayer(player);
+			this.gameMode.onRemovePlayer(player);
 			return;
 		}
     }.bind(this));
@@ -83,7 +83,8 @@ GameServer.prototype.nofityClient = function(packet) {
 }
 
 GameServer.prototype.checkNofity = function(packet) {
-	return this.socketServer.clients.length > 0
+	var ret = this.socketServer.clients.length > 0 && this.run == true;
+	return ret;
 }
 
 GameServer.prototype.sendPacket = function(packet) {
@@ -96,6 +97,7 @@ GameServer.prototype.sendPacket = function(packet) {
             this.removeAllListeners();
         }
     } else {
+    	this.run = false;
         this.emit('close');
         this.removeAllListeners();
     }

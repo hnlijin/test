@@ -35,3 +35,4 @@ var NetSevice = (function (_super) {
     return NetSevice;
 }(Component));
 egret.registerClass(NetSevice,'NetSevice');
+//# sourceMappingURL=NetSevice.js.map

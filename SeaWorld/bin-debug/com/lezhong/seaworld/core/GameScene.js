@@ -72,3 +72,4 @@ var GameScene = (function () {
     return GameScene;
 }());
 egret.registerClass(GameScene,'GameScene');
+//# sourceMappingURL=GameScene.js.map

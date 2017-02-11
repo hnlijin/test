@@ -23,24 +23,30 @@ var GameLogicComponent = (function (_super) {
             case GameLogicComponent.ADD_PLAYER:
                 {
                     offset += 1;
-                    var id = byte.dataView.getUint8(offset);
-                    var name = "";
-                    offset += 1;
-                    var len = byte.dataView.getUint8(offset);
-                    offset += 1;
-                    for (var i = 0; i < len; i += 1) {
-                        var charCode = byte.dataView.getUint16(i * 2 + offset, true);
-                        if (charCode == 0) {
-                            break;
+                    var count = byte.dataView.getUint8(offset);
+                    for (var i = 0; i < count; i++) {
+                        var id = byte.dataView.getUint8(offset += 1);
+                        var name = "";
+                        var x = 0;
+                        var y = 0;
+                        var len = byte.dataView.getUint8(offset += 1);
+                        offset += 1;
+                        for (var i = 0; i < len; i += 1) {
+                            var charCode = byte.dataView.getUint16(offset += i * 2, true);
+                            if (charCode == 0) {
+                                break;
+                            }
+                            name += String.fromCharCode(charCode);
                         }
-                        name += String.fromCharCode(charCode);
+                        x = byte.dataView.getInt32(offset += 1);
+                        y = byte.dataView.getInt32(offset += 4);
+                        console.log("add_player:", id, len, name, x, y);
+                        var data = {};
+                        data["id"] = id;
+                        data["name"] = name;
+                        var gameObject = GameFactory.createGameObject(this._ower.map, data);
+                        this._ower.map.addGameObject(gameObject);
                     }
-                    console.log("add_player:", id, len, name);
-                    var data = {};
-                    data["id"] = id;
-                    data["name"] = name;
-                    var gameObject = GameFactory.createGameObject(this._ower.map, data);
-                    this._ower.map.addGameObject(gameObject);
                 }
                 break;
             case GameLogicComponent.REMOVE_PALYER:
@@ -80,7 +86,10 @@ var GameLogicComponent = (function (_super) {
     GameLogicComponent.ADD_PLAYER = 10;
     GameLogicComponent.REMOVE_PALYER = 11;
     GameLogicComponent.UPDATE_PLAYER = 12;
-    GameLogicComponent.UPDATE_FISH = 13;
+    GameLogicComponent.ADD_FISH = 20;
+    GameLogicComponent.UPDATE_FISH = 21;
+    GameLogicComponent.REMOVE_FISH = 22;
     return GameLogicComponent;
 }(Component));
 egret.registerClass(GameLogicComponent,'GameLogicComponent');
+//# sourceMappingURL=GameLogicComponent.js.map

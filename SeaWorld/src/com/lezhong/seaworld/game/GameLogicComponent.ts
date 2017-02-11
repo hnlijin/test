@@ -14,7 +14,10 @@ class GameLogicComponent extends Component
     private static ADD_PLAYER:number = 10;
     private static REMOVE_PALYER:number = 11;
     private static UPDATE_PLAYER:number = 12;
-    private static UPDATE_FISH: number = 13;
+    
+    private static ADD_FISH:number = 20;
+    private static UPDATE_FISH: number = 21;
+    private static REMOVE_FISH: number = 22;
 	
     public constructor(ower:GameScene)
 	{
@@ -38,26 +41,35 @@ class GameLogicComponent extends Component
             case GameLogicComponent.ADD_PLAYER: // add player : id, name
             {
                 offset += 1;
-                var id:number = byte.dataView.getUint8(offset);
-                var name:string = "";
-                offset += 1;
-                var len = byte.dataView.getUint8(offset);
-                offset += 1;
-                for(var i = 0; i < len; i += 1) {
-                    var charCode = byte.dataView.getUint16(i * 2 + offset, true);
-                    if(charCode == 0) {
-                        break;
-                    }
-                    name += String.fromCharCode(charCode);
-                }
-                
-                console.log("add_player:", id, len, name);
+                var count = byte.dataView.getUint8(offset);
+                for (var i:number = 0; i < count; i++)
+                {
+                    var id: number = byte.dataView.getUint8(offset += 1);
+                    var name: string = "";
+                    var x:number = 0;
+                    var y:number = 0;
                     
-                var data = {};
-                data["id"] = id;
-                data["name"] = name;
-                var gameObject = GameFactory.createGameObject(this._ower.map, data);
-                this._ower.map.addGameObject(gameObject);
+                    var len = byte.dataView.getUint8(offset += 1);
+                    offset += 1;
+                    for(var i = 0;i < len;i += 1) {
+                        var charCode = byte.dataView.getUint16(offset += i * 2, true);
+                        if(charCode == 0) {
+                            break;
+                        }
+                        name += String.fromCharCode(charCode);
+                    }
+                    
+                    x = byte.dataView.getInt32(offset += 1);
+                    y = byte.dataView.getInt32(offset += 4);
+
+                    console.log("add_player:",id ,len, name, x, y);
+
+                    var data = {};
+                    data["id"] = id;
+                    data["name"] = name;
+                    var gameObject = GameFactory.createGameObject(this._ower.map,data);
+                    this._ower.map.addGameObject(gameObject);
+                }
             }
             break;
             

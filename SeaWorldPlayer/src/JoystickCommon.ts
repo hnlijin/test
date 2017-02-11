@@ -10,6 +10,7 @@ class JoystickCommon extends egret.DisplayObjectContainer
     private radius:number = 100;
     private offsetX:number = 0;
     private offsetY:number = 0;
+    private _enabled:Boolean = true;
     
 	public constructor()
 	{
@@ -28,21 +29,29 @@ class JoystickCommon extends egret.DisplayObjectContainer
         this.addChild(this.joystickDot);
         
         this.radius = this.joystickBG.width / 2 - this.joystickDot.width / 3;
-        this.resetPosition(false);
+        this.resetPosition();
         
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
 	}
 	
-	private resetPosition(sendEvent:Boolean):void
+	public set enabled(value:Boolean)
+    {
+        this._enabled = value;
+    }
+    
+    public get enabled():Boolean
+    {
+        return this._enabled;
+    }
+	
+	private resetPosition():void
 	{
         this.joystickBG.x = -this.joystickBG.width / 2;
         this.joystickBG.y = -this.joystickBG.height / 2;
         this.joystickDot.x = -this.joystickDot.width / 2;
         this.joystickDot.y = -this.joystickDot.height / 2;
-        
-        if (sendEvent) {
-            this.dispatchEvent(new egret.Event(egret.Event.CHANGE,false,false,{ x: 0,y: 0 }));
-        }
+        this.offsetX = 0;
+        this.offsetY = 0;
 	}
 	
     private onAddToStage(evt:egret.Event):void
@@ -85,18 +94,28 @@ class JoystickCommon extends egret.DisplayObjectContainer
         if (this.offsetX != lx || this.offsetY != ly) {
             this.offsetX = Math.ceil(lx / this.radius * 100);
             this.offsetY = Math.ceil(ly / this.radius * 100);
-            console.log("pos,", this.offsetX, this.offsetY);
-            this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, {x:this.offsetX, y:this.offsetY}));
+            this.sendEvent();
         }
     }
     
     private onTouchEnd(evt:egret.TouchEvent):void
     {
-        this.resetPosition(true);
+        this.resetPosition();
+        this.sendEvent();
     }
     
     private onTouchCancel(evt:egret.TouchEvent):void
     {
-        this.resetPosition(true);
+        this.resetPosition();
+        this.sendEvent();
+    }
+    
+    private sendEvent():void
+    {
+        if (this._enabled)
+        {
+            console.log("pos,",this.offsetX,this.offsetY);
+            this.dispatchEvent(new egret.Event(egret.Event.CHANGE,false,false,{ x: this.offsetX,y: this.offsetY }));
+        }
     }
 }

@@ -41,3 +41,4 @@ var GameMap = (function (_super) {
     return GameMap;
 }(egret.DisplayObjectContainer));
 egret.registerClass(GameMap,'GameMap');
+//# sourceMappingURL=GameMap.js.map

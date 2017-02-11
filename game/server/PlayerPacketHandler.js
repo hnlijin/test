@@ -1,4 +1,4 @@
-var packets = require('./packet/player');
+var handlers = require('./handlers')
 
 function PlayerPacketHandler(gameServer, playerServer, client) {
     this.gameServer = gameServer;
@@ -30,12 +30,12 @@ PlayerPacketHandler.prototype.handleMessage = function(message)
 
     var buffer = stobuf(message);
     var view = new DataView(buffer);
-    var packetId = view.getUint8(0, true);
-    var packet = packets[packetId];
-    if (packet) {
-        packet(this.gameServer, this.client, view);
+    var handlerId = view.getUint8(0, true);
+    var handler = handlers[handlerId];
+    if (handler) {
+        handler(this.gameServer, this.client, view);
     } else {
-        console.log('\u001B[31m[WARNING]: [' + packetId + "] packet not found!\u001B[0m");
+        console.log('\u001B[31m[WARNING]: [' + handlerId + "] handler not found!\u001B[0m");
     }
 };
 

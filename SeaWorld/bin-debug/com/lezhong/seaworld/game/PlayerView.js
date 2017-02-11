@@ -31,3 +31,4 @@ var PlayerView = (function (_super) {
     return PlayerView;
 }(Component));
 egret.registerClass(PlayerView,'PlayerView');
+//# sourceMappingURL=PlayerView.js.map

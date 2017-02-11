@@ -12,6 +12,7 @@ var JoystickCommon = (function (_super) {
         this.radius = 100;
         this.offsetX = 0;
         this.offsetY = 0;
+        this._enabled = true;
         this.touchEnabled = true;
         this.joystickBG = new egret.Bitmap();
         var texture = RES.getRes("JoystickBG_png");
@@ -22,18 +23,25 @@ var JoystickCommon = (function (_super) {
         this.joystickDot.texture = texture;
         this.addChild(this.joystickDot);
         this.radius = this.joystickBG.width / 2 - this.joystickDot.width / 3;
-        this.resetPosition(false);
+        this.resetPosition();
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     var d = __define,c=JoystickCommon,p=c.prototype;
-    p.resetPosition = function (sendEvent) {
+    d(p, "enabled"
+        ,function () {
+            return this._enabled;
+        }
+        ,function (value) {
+            this._enabled = value;
+        }
+    );
+    p.resetPosition = function () {
         this.joystickBG.x = -this.joystickBG.width / 2;
         this.joystickBG.y = -this.joystickBG.height / 2;
         this.joystickDot.x = -this.joystickDot.width / 2;
         this.joystickDot.y = -this.joystickDot.height / 2;
-        if (sendEvent) {
-            this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, { x: 0, y: 0 }));
-        }
+        this.offsetX = 0;
+        this.offsetY = 0;
     };
     p.onAddToStage = function (evt) {
         this.stage.addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onTouchBegin, this);
@@ -68,15 +76,22 @@ var JoystickCommon = (function (_super) {
         if (this.offsetX != lx || this.offsetY != ly) {
             this.offsetX = Math.ceil(lx / this.radius * 100);
             this.offsetY = Math.ceil(ly / this.radius * 100);
-            console.log("pos,", this.offsetX, this.offsetY);
-            this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, { x: this.offsetX, y: this.offsetY }));
+            this.sendEvent();
         }
     };
     p.onTouchEnd = function (evt) {
-        this.resetPosition(true);
+        this.resetPosition();
+        this.sendEvent();
     };
     p.onTouchCancel = function (evt) {
-        this.resetPosition(true);
+        this.resetPosition();
+        this.sendEvent();
+    };
+    p.sendEvent = function () {
+        if (this._enabled) {
+            console.log("pos,", this.offsetX, this.offsetY);
+            this.dispatchEvent(new egret.Event(egret.Event.CHANGE, false, false, { x: this.offsetX, y: this.offsetY }));
+        }
     };
     return JoystickCommon;
 }(egret.DisplayObjectContainer));
