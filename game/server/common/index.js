@@ -20,7 +20,7 @@ common.getLocalIp = function()
 
 	if (netInfo == null)
 	{
-		netInfo = netWorkInfo.rmnet_data0;
+		// netInfo = netWorkInfo.rmnet_data0;
 	}
 
 	if (netInfo != null)
