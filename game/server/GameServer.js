@@ -5,6 +5,7 @@ var WebSocket = require('ws');
 var common = require('./common');
 var GamePacketHandler = require('./GamePacketHandler')
 var Gamemode = require('./modes');
+var GameFactory = require('./GameFactory');
 var packet = require('./packet');
 var entity = require('./entity')
 
@@ -13,6 +14,7 @@ function GameServer()
 	this.config = {
 		serverPort: 9001,
 		serverGamemode: 1,
+		player: 1,
 		tickTime: 100,
 	};
 
@@ -23,7 +25,7 @@ module.exports = GameServer;
 
 GameServer.prototype.start = function()
 {
-	this.gameMode = Gamemode.get(this.config.serverGamemode, this);
+	this.gameMode = GameFactory.getMode(this.config.serverGamemode, this);
 	this.socketServer = new WebSocket.Server({port: this.config.serverPort}, this.startGame.bind(this));
 	this.socketServer.on('connection', function(client)
 	{		
@@ -56,7 +58,7 @@ GameServer.prototype.mainLoop = function() {
 }
 
 GameServer.prototype.addPlayer = function(newClient) {
-	var newPlayer = new entity.Player(this.gameMode.getID(), newClient);
+	var newPlayer = GameFactory.getEntity(this.config.player, this.gameMode.getID(), newClient);
 	newClient.onUpdateSpeed = newPlayer.onUpdateSpeed.bind(newPlayer); 
     this.gameMode.onPlayerInit(newPlayer);
     return newPlayer;

@@ -2,9 +2,9 @@ var Mode = require('./../../modes/Mode');
 var packet = require('./../packet');
 var entity = require('./../entity');
 
-function SeaWorld(gameServer, ID) {
+function SeaWorld(gameServer) {
     this.gameServer = gameServer;
-    this.ID = ID;
+    this.ID = -1;
     this.name = "Sea World";
     this.players = [];
     this.ids = 0;
