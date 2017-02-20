@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 /**
  *
  * @author
@@ -6,7 +9,6 @@
 var GameFactory = (function () {
     function GameFactory() {
     }
-    var d = __define,c=GameFactory,p=c.prototype;
     GameFactory.createGameObject = function (map, data) {
         if (data != null) {
             var gameObject = new GameObject(map, data);
@@ -17,5 +19,4 @@ var GameFactory = (function () {
     };
     return GameFactory;
 }());
-egret.registerClass(GameFactory,'GameFactory');
-//# sourceMappingURL=GameFactory.js.map
+__reflect(GameFactory.prototype, "GameFactory");

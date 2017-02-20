@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package game;
+
+message JoinGame {
+	required uint32 flag = 0;
+	optional uint32 room = 1;
+	optional string name = 2;
+}
+
+message EntityItem {
+	required uint32 id = 0;
+	optional string name = 1;
+	optional int32 x = 2;
+	optional int32 y = 3;
+}
+
+message RemoveEntityItem {
+	required uint32 id = 0;
+}
+
+message AddPlayer {
+	required uint32 flag = 0;
+	repeated EntityItem players = 1 [packed=true];
+}
+
+message UpdatePlayer {
+	required uint32 flag = 0;
+	repeated EntityItem players = 1 [packed=true];
+}
+
+message RemovePlayer {
+	required uint32 flag = 0;
+	repeated RemoveEntityItem players = 1 [packed=true];
+}

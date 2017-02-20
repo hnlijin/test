@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "./../../../protobuf/protocol/game.proto";
+
+package game.seaworld;
+
+message EntityItem {
+	required uint32 id = 0;
+	optional string name = 1;
+	optional int32 x = 2;
+	optional int32 y = 3;
+}
+
+message RemoveEntityItem {
+	required uint32 id = 0;
+}
+
+message AddFish {
+	required uint32 flag = 0;
+	repeated EntityItem fishs = 1 [packed=true];
+}
+
+message UpdateFish {
+	required uint32 flag = 0;
+	repeated EntityItem fishs = 1 [packed=true];
+}
+
+message RemoveFish {
+	required uint32 flag = 0;
+	repeated RemoveEntityItem fishs = 1 [packed=true];
+}

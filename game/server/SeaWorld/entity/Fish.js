@@ -12,5 +12,9 @@ function Fish(id, x, y) {
 module.exports = Fish;
 Fish.prototype = new GameObject();
 
-Fish.prototype.onUpdate = function(gameServer) {
+Fish.prototype.onUpdate = function(mode) {
 };
+
+Fish.prototype.onCheckCollision = function(entity) {
+	
+}

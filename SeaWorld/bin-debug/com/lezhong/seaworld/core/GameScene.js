@@ -1,3 +1,6 @@
+var __reflect = (this && this.__reflect) || function (p, c, t) {
+    p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
+};
 /**
  *
  * @author
@@ -20,56 +23,60 @@ var GameScene = (function () {
         contentView.addChild(this._ui);
         contentView.addChild(this._tip);
     }
-    var d = __define,c=GameScene,p=c.prototype;
-    d(GameScene, "currentScene"
-        ,function () {
+    Object.defineProperty(GameScene, "currentScene", {
+        get: function () {
             return GameScene._currentScene;
-        }
-        ,function (scene) {
+        },
+        set: function (scene) {
             GameScene._currentScene = scene;
-        }
-    );
-    d(p, "data"
-        ,function () {
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(GameScene.prototype, "data", {
+        get: function () {
             return this._data;
-        }
-        ,function (data) {
+        },
+        set: function (data) {
             this._data = data;
-        }
-    );
-    p.addComponent = function (name, component) {
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GameScene.prototype.addComponent = function (name, component) {
         this._components[name] = component;
         component.onEnter();
     };
-    p.getComponent = function (name) {
+    GameScene.prototype.getComponent = function (name) {
         return this._components[name];
     };
-    p.removeComponent = function (name) {
+    GameScene.prototype.removeComponent = function (name) {
         var component = this._components[name];
         if (component != null) {
             component.onEixt();
             delete this._components[name];
         }
     };
-    p.removeAllComponent = function () {
+    GameScene.prototype.removeAllComponent = function () {
         for (var name in this._components) {
             this.removeComponent(name);
         }
     };
-    d(p, "map"
-        ,function () {
+    Object.defineProperty(GameScene.prototype, "map", {
+        get: function () {
             return this._gameMap;
-        }
-    );
-    p.setBackground = function (background) {
+        },
+        enumerable: true,
+        configurable: true
+    });
+    GameScene.prototype.setBackground = function (background) {
         this._background.removeChildren();
         this._background.addChildAt(background, 0);
     };
-    p.getBackground = function () {
+    GameScene.prototype.getBackground = function () {
         return this._background;
     };
-    GameScene._currentScene = null;
     return GameScene;
 }());
-egret.registerClass(GameScene,'GameScene');
-//# sourceMappingURL=GameScene.js.map
+GameScene._currentScene = null;
+__reflect(GameScene.prototype, "GameScene");

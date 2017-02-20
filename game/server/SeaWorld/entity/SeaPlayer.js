@@ -17,7 +17,11 @@ SeaPlayer.prototype.onUpdateName = function(name) {
     this.name = name;
 }
 
-SeaPlayer.prototype.onUpdate = function(gameServer) {
+SeaPlayer.prototype.onUpdate = function(mode) {
 	this.x = this.x + this.sx;
     this.y = this.y + this.sy;
 };
+
+SeaPlayer.prototype.onCheckCollision = function(entity) {
+	return false;
+}

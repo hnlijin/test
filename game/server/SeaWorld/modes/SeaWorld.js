@@ -28,7 +28,7 @@ SeaWorld.prototype.onServerInit = function() {
     }
 }
 
-Mode.prototype.onClinetInit = function(client) {
+SeaWorld.prototype.onClinetInit = function(client) {
     var len = this.fishs.length;
     if (len > 0 && this.gameServer.checkNofity()) {
         var addFish = new packet.AddFish(len);
@@ -50,15 +50,46 @@ Mode.prototype.onClinetInit = function(client) {
 
 SeaWorld.prototype.onTick = function() {
     // Called on every game tick 
+    var len = this.fishs.length;
+    if (len > 0 && this.gameServer.checkNofity()) {
+        var updateFish = new packet.UpdateFish(len);
+        this.fishs.forEach(function each(fish) {
+            fish.onUpdate(this);
+            updateFish.addPlayer(fish);
+        }.bind(this));
+        this.gameServer.nofityClient(updateFish);
+    }
+
     var len = this.players.length;
     if (len > 0 && this.gameServer.checkNofity()) {
+        var removeFish = new packet.RemoveFish();
         var updatePlayer = new this.gameServer.packet.UpdatePlayer(len);
         this.players.forEach(function each(player) {
-            player.onUpdate();
+            player.onUpdate(this);
             updatePlayer.addPlayer(player);
+            var collisionList = this.checkCollision()
+            if (collisionList.length > 0) {
+                removeFish.removeFish(collisionList)
+            }
         }.bind(this));
+        if (removeFish.getCount() > 0) {
+            this.gameServer.nofityClient(removeFish);
+        }
         this.gameServer.nofityClient(updatePlayer);
     }
+}
+
+SeaWorld.prototype.checkCollision = function(player) {
+    var collisionList = []
+    var len = this.fishs.length;
+    if (len > 0) {
+        this.fishs.forEach(function each(fish) {
+            if (fish.onCheckCollision(player)) {
+                collisionList.push(fish);
+            }
+        }.bind(this));
+    }
+    return collisionList;
 }
 
 SeaWorld.prototype.onPlayerInit = function(newPlayer) {

@@ -28,3 +28,7 @@ Player.prototype.onUpdate = function(gameServer) {
 	this.x = this.x + this.sx;
     this.y = this.y + this.sy;
 };
+
+Player.prototype.onCheckCollision = function(entity) {
+    return false;
+}
