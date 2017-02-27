@@ -7,6 +7,7 @@ function Fish(id, x, y) {
     this.sy = 0;
     this.x = x;
     this.y = y;
+    this.radius = 10;
 }
 
 module.exports = Fish;
@@ -15,6 +16,10 @@ Fish.prototype = new GameObject();
 Fish.prototype.onUpdate = function(mode) {
 };
 
+Fish.prototype.eat = function(entity) {
+    this.radius += entity.radius;
+}
+
 Fish.prototype.onCheckCollision = function(entity) {
-	
+	return false;
 }

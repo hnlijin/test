@@ -34,3 +34,4 @@ var MapBackground = (function (_super) {
     return MapBackground;
 }(egret.Sprite));
 __reflect(MapBackground.prototype, "MapBackground");
+//# sourceMappingURL=MapBackground.js.map

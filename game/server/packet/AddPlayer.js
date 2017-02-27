@@ -3,7 +3,7 @@ var constants = require('./../constants')
 function AddPlayer(count) {
     this.count = count;
     this.nameLen = 10;
-    this.buf = new ArrayBuffer(2 + count * (this.nameLen * 2 + 10));
+    this.buf = new ArrayBuffer(2 + count * (this.nameLen * 2 + 12));
     this.view = new DataView(this.buf);
     this.offset = 0;
     this.view.setUint8(this.offset, constants.ADD_PLAYER, true);
@@ -19,6 +19,8 @@ AddPlayer.prototype.addPlayer = function(player) {
         var name = player.name;
         this.view.setUint8(this.offset, player.id);
         this.offset += 1;
+        this.view.setUint16(this.offset, player.radius);
+        this.offset += 2;
         this.view.setUint8(this.offset, this.nameLen, true);
         this.offset += 1;
         for(var i = 0; i < this.nameLen; i += 1) {

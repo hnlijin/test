@@ -23,3 +23,4 @@ var Component = (function (_super) {
     return Component;
 }(egret.EventDispatcher));
 __reflect(Component.prototype, "Component");
+//# sourceMappingURL=Component.js.map

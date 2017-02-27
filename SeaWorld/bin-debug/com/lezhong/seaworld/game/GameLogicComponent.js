@@ -36,6 +36,8 @@ var GameLogicComponent = (function (_super) {
                     for (var i = 0; i < count; i++) {
                         var id = byte.dataView.getUint8(offset);
                         offset += 1;
+                        var radius = byte.dataView.getUint16(offset);
+                        offset += 2;
                         var name = "";
                         var x = 0;
                         var y = 0;
@@ -56,8 +58,8 @@ var GameLogicComponent = (function (_super) {
                         var data = {};
                         data["id"] = id;
                         data["name"] = name;
+                        data["radius"] = radius;
                         var gameObject = GameFactory.createGameObject(this._ower.map, data);
-                        gameObject.updatePosition(x, y);
                         this._ower.map.addGameObject(gameObject);
                     }
                 }
@@ -69,6 +71,8 @@ var GameLogicComponent = (function (_super) {
                     for (var i = 0; i < len; i += 1) {
                         var id = byte.dataView.getUint8(offset);
                         offset += 1;
+                        var radius = byte.dataView.getUint16(offset);
+                        offset += 2;
                         var x = byte.dataView.getInt32(offset);
                         offset += 4;
                         var y = byte.dataView.getInt32(offset);
@@ -77,7 +81,11 @@ var GameLogicComponent = (function (_super) {
                         if (id > 0) {
                             var gameObject = this._ower.map.getGameObjectForId(id);
                             if (gameObject != null) {
-                                gameObject.updatePosition(x, y);
+                                var data = gameObject.data;
+                                data["x"] = x;
+                                data["y"] = y;
+                                data["radius"] = radius;
+                                gameObject.data = data;
                             }
                         }
                     }
@@ -100,6 +108,8 @@ var GameLogicComponent = (function (_super) {
                     for (var i = 0; i < count; i++) {
                         var id = byte.dataView.getUint8(offset);
                         offset += 1;
+                        var radius = byte.dataView.getUint16(offset);
+                        offset += 2;
                         var name = "";
                         var x = 0;
                         var y = 0;
@@ -120,8 +130,8 @@ var GameLogicComponent = (function (_super) {
                         var data = {};
                         data["id"] = id;
                         data["name"] = name;
+                        data["radius"] = radius;
                         var gameObject = GameFactory.createGameObject(this._ower.map, data);
-                        gameObject.updatePosition(x, y);
                         this._ower.map.addGameObject(gameObject);
                     }
                 }
@@ -133,6 +143,8 @@ var GameLogicComponent = (function (_super) {
                     for (var i = 0; i < len; i += 1) {
                         var id = byte.dataView.getUint8(offset);
                         offset += 1;
+                        var radius = byte.dataView.getUint16(offset);
+                        offset += 2;
                         var x = byte.dataView.getInt32(offset);
                         offset += 4;
                         var y = byte.dataView.getInt32(offset);
@@ -141,7 +153,11 @@ var GameLogicComponent = (function (_super) {
                         if (id > 0) {
                             var gameObject = this._ower.map.getGameObjectForId(id);
                             if (gameObject != null) {
-                                gameObject.updatePosition(x, y);
+                                var data = gameObject.data;
+                                data["x"] = x;
+                                data["y"] = y;
+                                data["radius"] = radius;
+                                gameObject.data = data;
                             }
                         }
                     }
@@ -149,11 +165,28 @@ var GameLogicComponent = (function (_super) {
                 break;
             case GameLogicComponent.REMOVE_FISH:
                 {
-                    var id = byte.dataView.getUint8(offset);
+                    var count = byte.dataView.getUint8(offset);
                     offset += 1;
-                    console.log("remove_fish:", id);
-                    if (id > 0) {
-                        this._ower.map.removeGameObjectForId(id);
+                    for (var i = 0; i < count; i++) {
+                        var id = byte.dataView.getUint32(offset);
+                        offset += 4;
+                        var radius = byte.dataView.getUint16(offset);
+                        offset += 2;
+                        var len = byte.dataView.getUint8(offset);
+                        offset += 1;
+                        var gameObject = this._ower.map.getGameObjectForId(id);
+                        if (gameObject != null) {
+                            var data = gameObject.data;
+                            data["radius"] = radius;
+                            gameObject.data = data;
+                        }
+                        for (var j = 0; j < len; j++) {
+                            var fid = byte.dataView.getUint32(offset);
+                            offset += 4;
+                            if (fid > 0) {
+                                this._ower.map.removeGameObjectForId(fid);
+                            }
+                        }
                     }
                 }
                 break;
@@ -170,3 +203,4 @@ GameLogicComponent.ADD_FISH = 20;
 GameLogicComponent.UPDATE_FISH = 21;
 GameLogicComponent.REMOVE_FISH = 22;
 __reflect(GameLogicComponent.prototype, "GameLogicComponent");
+//# sourceMappingURL=GameLogicComponent.js.map

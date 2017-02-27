@@ -43,3 +43,4 @@ var NetSevice = (function (_super) {
     return NetSevice;
 }(Component));
 __reflect(NetSevice.prototype, "NetSevice");
+//# sourceMappingURL=NetSevice.js.map

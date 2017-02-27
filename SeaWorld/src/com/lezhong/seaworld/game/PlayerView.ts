@@ -17,13 +17,21 @@ class PlayerView extends Component {
     	  this.label = new egret.TextField();
     	  this.label.textColor = 0x00ff00;
     	  this.label.text = this.gameObject.data["name"];
+		  this.label.x = -this.label.width / 2;
+		  this.label.y = -this.label.height / 2;
     	  this.view.addChild(this.label);
 	}
 	
 	public onEnter():void {
-	    this.view.graphics.clear();
+		this.updateView();
+	}
+
+	public updateView():void
+	{
+		var radius:number = this.gameObject.data["radius"];
+		this.view.graphics.clear();
 	    this.view.graphics.beginFill(0xff0000);
-	    this.view.graphics.drawRect(0, 0, 60, 30);
+	    this.view.graphics.drawCircle(0, 0, radius);
 	    this.view.graphics.endFill();
 	}
 	

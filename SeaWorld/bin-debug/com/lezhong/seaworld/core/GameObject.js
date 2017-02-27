@@ -13,25 +13,27 @@ var __extends = (this && this.__extends) || function (d, b) {
  */
 var GameObject = (function (_super) {
     __extends(GameObject, _super);
-    function GameObject(map, data) {
+    function GameObject(map, da) {
         var _this = _super.call(this) || this;
         _this._map = null;
         _this._data = null;
         _this._components = {};
         _this._map = map;
-        _this._data = data;
+        _this.data = da;
         return _this;
     }
-    GameObject.prototype.updatePosition = function (posx, posy) {
-        this.x = posx;
-        this.y = posy;
-    };
     Object.defineProperty(GameObject.prototype, "data", {
         get: function () {
             return this._data;
         },
         set: function (value) {
             this._data = value;
+            this.x = this._data["x"];
+            this.y = this._data["y"];
+            var view = this.getComponent("view");
+            if (view != null) {
+                view.updateView();
+            }
         },
         enumerable: true,
         configurable: true
@@ -58,3 +60,4 @@ var GameObject = (function (_super) {
     return GameObject;
 }(egret.DisplayObjectContainer));
 __reflect(GameObject.prototype, "GameObject");
+//# sourceMappingURL=GameObject.js.map

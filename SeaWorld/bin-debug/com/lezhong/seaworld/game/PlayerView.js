@@ -21,13 +21,19 @@ var PlayerView = (function (_super) {
         _this.label = new egret.TextField();
         _this.label.textColor = 0x00ff00;
         _this.label.text = _this.gameObject.data["name"];
+        _this.label.x = -_this.label.width / 2;
+        _this.label.y = -_this.label.height / 2;
         _this.view.addChild(_this.label);
         return _this;
     }
     PlayerView.prototype.onEnter = function () {
+        this.updateView();
+    };
+    PlayerView.prototype.updateView = function () {
+        var radius = this.gameObject.data["radius"];
         this.view.graphics.clear();
         this.view.graphics.beginFill(0xff0000);
-        this.view.graphics.drawRect(0, 0, 60, 30);
+        this.view.graphics.drawCircle(0, 0, radius);
         this.view.graphics.endFill();
     };
     PlayerView.prototype.onExit = function () {
@@ -39,3 +45,4 @@ var PlayerView = (function (_super) {
     return PlayerView;
 }(Component));
 __reflect(PlayerView.prototype, "PlayerView");
+//# sourceMappingURL=PlayerView.js.map

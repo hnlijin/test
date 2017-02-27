@@ -80,3 +80,4 @@ var GameScene = (function () {
 }());
 GameScene._currentScene = null;
 __reflect(GameScene.prototype, "GameScene");
+//# sourceMappingURL=GameScene.js.map

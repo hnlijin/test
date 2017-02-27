@@ -49,3 +49,4 @@ var GameMap = (function (_super) {
     return GameMap;
 }(egret.DisplayObjectContainer));
 __reflect(GameMap.prototype, "GameMap");
+//# sourceMappingURL=GameMap.js.map

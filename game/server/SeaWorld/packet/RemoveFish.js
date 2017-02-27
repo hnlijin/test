@@ -1,14 +1,15 @@
 var constants = require('./../constants')
 
 function RemoveFish() {
-    this.count = 0;
+    this.count = 2;
     this.fishs = [];
 }
 
 module.exports = RemoveFish;
 
-RemoveFish.prototype.removeFish = function(fishs, targetId) {
-    this.fishs.push({fishs:fishs, targetId:targetId});
+RemoveFish.prototype.removeFish = function(fs, player) {
+    this.fishs.push({fishs:fs, player:player});
+    this.count += fs.length * 4 + 7;
 }
 
 RemoveFish.prototype.getCount = function() {
@@ -16,19 +17,22 @@ RemoveFish.prototype.getCount = function() {
 }
 
 RemoveFish.prototype.build = function() {
-    this.buf = new ArrayBuffer(5 + count * 8);
+    this.buf = new ArrayBuffer(this.count);
     this.view = new DataView(this.buf);
     this.offset = 0;
     this.view.setUint8(this.offset, constants.REMOVE_FISH, true);
     this.offset += 1;
-    this.view.setUint32(this.offset, count, true);
-    this.offset += 4;
+    this.view.setUint8(this.offset, this.fishs.length, true);
+    this.offset += 1;
     this.fishs.forEach(function each(item) {
-        var fishs = item.fishs;
-        fishs.forEach(function each(fish) {
+        this.view.setUint32(this.offset, item.player.id)
+        this.offset += 4;
+        this.view.setUint16(this.offset, item.player.radius)
+        this.offset += 2;
+        this.view.setUint8(this.offset, item.fishs.length)
+        this.offset += 1
+        item.fishs.forEach(function each(fish) {
             this.view.setUint32(this.offset, fish.id);
-            this.offset += 4;
-            this.view.setUint32(this.offset, item.targetId);
             this.offset += 4;
         }.bind(this));
     }.bind(this));

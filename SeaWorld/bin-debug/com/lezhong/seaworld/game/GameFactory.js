@@ -20,3 +20,4 @@ var GameFactory = (function () {
     return GameFactory;
 }());
 __reflect(GameFactory.prototype, "GameFactory");
+//# sourceMappingURL=GameFactory.js.map

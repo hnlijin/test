@@ -9,7 +9,6 @@ function Player(id, client) {
     this.x = 0;
     this.y = 0;
     this.speed = 10;
-    this.score = 0;
 }
 
 module.exports = Player;

@@ -9,22 +9,23 @@ class GameObject extends egret.DisplayObjectContainer
     private _data: Object = null;
     private _components: Object = {};
     
-	public constructor(map:GameMap, data:Object)
+	public constructor(map:GameMap, da:Object)
 	{
         super();
         
         this._map = map;
-        this._data = data;
+        this.data = da;
 	}
-
-    public updatePosition(posx:number, posy:number):void
-    {
-        this.x = posx;
-        this.y = posy;
-    }
     
     public set data(value:Object) {
         this._data = value;
+        this.x = this._data["x"];
+        this.y = this._data["y"];
+
+        var view:PlayerView = this.getComponent("view") as PlayerView;
+        if (view != null) {
+            view.updateView();
+        }
     }
 	
 	public get data():Object

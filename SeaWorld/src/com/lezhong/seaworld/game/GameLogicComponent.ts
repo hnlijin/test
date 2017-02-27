@@ -39,7 +39,7 @@ class GameLogicComponent extends Component
         
         switch(packetId)
         {   
-            case GameLogicComponent.ADD_PLAYER: // add player : id, name
+            case GameLogicComponent.ADD_PLAYER: // add player : id, radius, name
             {
                 var count = byte.dataView.getUint8(offset);
                 offset += 1
@@ -47,6 +47,9 @@ class GameLogicComponent extends Component
                 {
                     var id: number = byte.dataView.getUint8(offset);
                     offset += 1;
+                    var radius:number = byte.dataView.getUint16(offset);
+                    offset += 2;
+
                     var name: string = "";
                     var x:number = 0;
                     var y:number = 0;
@@ -71,8 +74,8 @@ class GameLogicComponent extends Component
                     var data = {};
                     data["id"] = id;
                     data["name"] = name;
+                    data["radius"] = radius;
                     var gameObject = GameFactory.createGameObject(this._ower.map,data);
-                    gameObject.updatePosition(x, y);
                     this._ower.map.addGameObject(gameObject);
                 }
             }
@@ -86,6 +89,8 @@ class GameLogicComponent extends Component
                 {
                     var id: number = byte.dataView.getUint8(offset);
                     offset += 1;
+                    var radius: number = byte.dataView.getUint16(offset);
+                    offset += 2;
                     var x: number = byte.dataView.getInt32(offset);
                     offset += 4;
                     var y: number = byte.dataView.getInt32(offset);
@@ -96,7 +101,11 @@ class GameLogicComponent extends Component
                     if (id > 0) {
                         var gameObject: GameObject = this._ower.map.getGameObjectForId(id);
                         if (gameObject != null) {
-                            gameObject.updatePosition(x, y);   
+                            var data:{} = gameObject.data;
+                            data["x"] = x;
+                            data["y"] = y;
+                            data["radius"] = radius;
+                            gameObject.data = data;
                         }
                     }
                 }
@@ -124,9 +133,13 @@ class GameLogicComponent extends Component
                 for(var i: number = 0;i < count;i++) {
                     var id: number = byte.dataView.getUint8(offset);
                     offset += 1;
+                    var radius:number = byte.dataView.getUint16(offset);
+                    offset += 2;
+
                     var name: string = "";
                     var x: number = 0;
                     var y: number = 0;
+
                     var nameLen = byte.dataView.getUint8(offset);
                     offset += 1;
                     
@@ -148,8 +161,9 @@ class GameLogicComponent extends Component
                     var data = {};
                     data["id"] = id;
                     data["name"] = name;
+                    data["radius"] = radius;
+
                     var gameObject = GameFactory.createGameObject(this._ower.map,data);
-                    gameObject.updatePosition(x, y);
                     this._ower.map.addGameObject(gameObject);
                 }
             }
@@ -162,6 +176,8 @@ class GameLogicComponent extends Component
                 for(var i: number = 0;i < len;i += 1) {
                     var id: number = byte.dataView.getUint8(offset);
                     offset += 1;
+                    var radius: number = byte.dataView.getUint16(offset);
+                    offset += 2;
                     var x: number = byte.dataView.getInt32(offset);
                     offset += 4;
                     var y: number = byte.dataView.getInt32(offset);
@@ -172,7 +188,11 @@ class GameLogicComponent extends Component
                     if(id > 0) {
                         var gameObject: GameObject = this._ower.map.getGameObjectForId(id);
                         if(gameObject != null) {
-                            gameObject.updatePosition(x,y);
+                            var data:{} = gameObject.data;
+                            data["x"] = x;
+                            data["y"] = y;
+                            data["radius"] = radius;
+                            gameObject.data = data;
                         }
                     }
                 }
@@ -181,13 +201,33 @@ class GameLogicComponent extends Component
             
             case GameLogicComponent.REMOVE_FISH: // remove fish : id
             {
-                var id: number = byte.dataView.getUint8(offset);
+                var count:number = byte.dataView.getUint8(offset);
                 offset += 1;
 
-                console.log("remove_fish:",id);
+                for (var i:number = 0; i < count; i++)
+                {
+                    var id: number = byte.dataView.getUint32(offset);
+                    offset += 4;
+                    var radius: number = byte.dataView.getUint16(offset);
+                    offset += 2;
+                    var len: number = byte.dataView.getUint8(offset);
+                    offset += 1;
 
-                if(id > 0) {
-                    this._ower.map.removeGameObjectForId(id);
+                    var gameObject: GameObject = this._ower.map.getGameObjectForId(id);
+                    if (gameObject != null) {
+                        var data:{} = gameObject.data;
+                        data["radius"] = radius;
+                        gameObject.data = data;
+                    }
+
+                    for (var j: number = 0; j < len; j++)
+                    {
+                        var fid: number = byte.dataView.getUint32(offset);
+                        offset += 4;
+                        if (fid > 0) {
+                            this._ower.map.removeGameObjectForId(fid);
+                        }
+                    }
                 }
             }
             break;

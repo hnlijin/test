@@ -67,9 +67,23 @@ SeaWorld.prototype.onTick = function() {
         this.players.forEach(function each(player) {
             player.onUpdate(this);
             updatePlayer.addPlayer(player);
-            var collisionList = this.checkCollision()
+            var collisionList = this.checkCollision(player)
             if (collisionList.length > 0) {
-                removeFish.removeFish(collisionList)
+                removeFish.removeFish(collisionList, player)
+                collisionList.forEach(function each(fish) {
+                    var len = this.fishs.length;
+                    var index = -1;
+                    for (var i = 0; i < len; i++) {
+                        if (fish == this.fishs[i]) {
+                            index = i;
+                            break;
+                        }
+                    }
+                    console.log("kkk:index:", index);
+                    if (index >= 0) {
+                        this.fishs.splice(index, 1);
+                    }
+                }.bind(this));
             }
         }.bind(this));
         if (removeFish.getCount() > 0) {
@@ -84,7 +98,8 @@ SeaWorld.prototype.checkCollision = function(player) {
     var len = this.fishs.length;
     if (len > 0) {
         this.fishs.forEach(function each(fish) {
-            if (fish.onCheckCollision(player)) {
+            if (player.onCheckCollision(fish)) {
+                player.eat(fish);
                 collisionList.push(fish);
             }
         }.bind(this));
