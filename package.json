@@ -1,0 +1,23 @@
+{
+  "name": "game",
+  "version": "1.0.0",
+  "description": "game",
+  "main": "index.js",
+  "scripts": {
+    "run": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hnlijin/test.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "na",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "ws": "^2.2.0"
+  }
+}
