@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="MainScene5" previous="" next="" version="2.2">
+  <item type="instance" UID="4963"/>
+  <item type="instance" UID="4844"/>
+  <item type="instance" UID="4782"/>
+  <item type="instance" UID="4783"/>
+  <item type="instance" UID="4784"/>
+  <item type="instance" UID="4785"/>
+  <item type="instance" UID="4945"/>
+  <item type="instance" UID="4880">
+    <item type="behavior" behaviorType="PinBehavior" name="别针"/>
+  </item>
+  <item type="instance" UID="4786"/>
+  <item type="instance" UID="4787"/>
+  <item type="instance" UID="4788"/>
+  <item type="instance" UID="4789"/>
+  <item type="instance" UID="4790">
+    <item type="behavior" behaviorType="PlatformBehaivor" name="横轴跑酷">
+      <item valueDataType="number" value="300" name="maxspeed"/>
+      <item valueDataType="number" value="500" name="acc"/>
+      <item valueDataType="number" value="5000" name="dec"/>
+      <item valueDataType="number" value="650" name="jumpStrength"/>
+      <item valueDataType="number" value="1500" name="g"/>
+      <item valueDataType="number" value="1000" name="maxFall"/>
+      <item valueDataType="number" value="1" name="enableDoubleJump"/>
+      <item valueDataType="number" value="0" name="jumpSustain"/>
+      <item valueDataType="number" value="1" name="defaultControls"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+    <item type="behavior" behaviorType="ScrollToBehavior" name="摄像机">
+      <item valueDataType="boolean" value="false" name="isBounds"/>
+    </item>
+    <item type="behavior" behaviorType="TimerBehavior" name="计时器"/>
+    <item type="behavior" behaviorType="BoundsOfRectBehaivor" name="边界限制">
+      <item valueDataType="number" value="0" name="boundType"/>
+      <item valueDataType="number" value="0" name="x"/>
+      <item valueDataType="number" value="0" name="y"/>
+      <item valueDataType="number" value="3968" name="width"/>
+      <item valueDataType="number" value="1200" name="height"/>
+    </item>
+  </item>
+  <item type="instance" UID="4791">
+    <item type="behavior" behaviorType="PlatformBehaivor" name="横轴跑酷">
+      <item valueDataType="number" value="0" name="maxspeed"/>
+      <item valueDataType="number" value="1500" name="acc"/>
+      <item valueDataType="number" value="1500" name="dec"/>
+      <item valueDataType="number" value="650" name="jumpStrength"/>
+      <item valueDataType="number" value="1500" name="g"/>
+      <item valueDataType="number" value="0" name="maxFall"/>
+      <item valueDataType="number" value="1" name="enableDoubleJump"/>
+      <item valueDataType="number" value="0" name="jumpSustain"/>
+      <item valueDataType="number" value="0" name="defaultControls"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+  </item>
+  <item type="instance" UID="4792">
+    <item type="behavior" behaviorType="PlatformBehaivor" name="横轴跑酷">
+      <item valueDataType="number" value="0" name="maxspeed"/>
+      <item valueDataType="number" value="1500" name="acc"/>
+      <item valueDataType="number" value="1500" name="dec"/>
+      <item valueDataType="number" value="650" name="jumpStrength"/>
+      <item valueDataType="number" value="1500" name="g"/>
+      <item valueDataType="number" value="0" name="maxFall"/>
+      <item valueDataType="number" value="1" name="enableDoubleJump"/>
+      <item valueDataType="number" value="0" name="jumpSustain"/>
+      <item valueDataType="number" value="0" name="defaultControls"/>
+      <item valueDataType="number" value="1" name="enabled"/>
+    </item>
+  </item>
+  <item type="instance" UID="4793"/>
+  <item type="instance" UID="4794">
+    <item type="behavior" behaviorType="PinBehavior" name="别针"/>
+  </item>
+  <item type="instance" UID="4795">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4796">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+    <item type="behavior" behaviorType="PinBehavior" name="别针"/>
+  </item>
+  <item type="instance" UID="4797">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+    <item type="behavior" behaviorType="PinBehavior" name="别针"/>
+  </item>
+  <item type="instance" UID="4798">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4799">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4800">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4801">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4802">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4803">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4804">
+    <item type="behavior" behaviorType="SolidBehaivor" name="刚体"/>
+  </item>
+  <item type="instance" UID="4877">
+    <item type="behavior" behaviorType="PinBehavior" name="别针"/>
+  </item>
+  <item type="instance" UID="4933">
+    <item type="behavior" behaviorType="ScrollBehaivor" name="滚屏">
+      <item valueDataType="number" value="1" name="active"/>
+      <item valueDataType="string" value="%22scrollLeft%22" name="scrollDirectionType"/>
+      <item valueDataType="number" value="40" name="speed"/>
+    </item>
+  </item>
+  <item type="instance" UID="4805"/>
+  <item type="instance" UID="4806"/>
+  <item type="instance" UID="4807"/>
+  <item type="instance" UID="4936"/>
+  <item type="variable" variableName="j" variableType="number" initValue="0"/>
+  <item type="variable" variableName="best1" variableType="number" initValue="0"/>
+  <item type="variable" variableName="best3" variableType="number" initValue="0"/>
+  <item type="variable" variableName="best2" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pass1" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pass2" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pass3" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pause" variableType="number" initValue="0"/>
+  <item type="variable" variableName="s1time" variableType="number" initValue="0"/>
+  <item type="variable" variableName="s2time" variableType="number" initValue="0"/>
+  <item type="variable" variableName="s3time" variableType="number" initValue="0"/>
+  <item type="variable" variableName="gg" variableType="number" initValue="0"/>
+  <item type="variable" variableName="dizhi" variableType="string" initValue="https://h5gogogo.egret-labs.org/v5/"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPlatformLandEvent" callName="onLand" isTrigger="true" target="player" behaviorName="横轴跑酷"/>
+    <item type="action" persistent="false" callTarget="instance" callName="changeArmature" target="AIDragonBones4597">
+      <item valueDataType="string" value="%22Armature%22" name="armatureName"/>
+      <item valueDataType="string" value="%22stand%22" name="animationName"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPlatformJumpEvent" callName="onJump" isTrigger="true" target="player" behaviorName="横轴跑酷"/>
+    <item type="action" persistent="false" callTarget="instance" callName="changeArmature" target="AIDragonBones4597">
+      <item valueDataType="string" value="%22Armature%22" name="armatureName"/>
+      <item valueDataType="string" value="%22jump%22" name="animationName"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPlatformMoveEvent" callName="onMove" isTrigger="true" target="player" behaviorName="横轴跑酷"/>
+    <item type="action" persistent="false" callTarget="instance" callName="changeArmature" target="AIDragonBones4597">
+      <item valueDataType="string" value="%22Armature%22" name="armatureName"/>
+      <item valueDataType="string" value="%22walk%22" name="animationName"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPlatformStopEvent" callName="onStop" isTrigger="true" target="player" behaviorName="横轴跑酷"/>
+    <item type="action" persistent="false" callTarget="instance" callName="changeArmature" target="AIDragonBones4597">
+      <item valueDataType="string" value="%22Armature%22" name="armatureName"/>
+      <item valueDataType="string" value="%22stand%22" name="animationName"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block1.x" name="21"/>
+      <item valueDataType="number" value="block1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block1.x" name="21"/>
+      <item valueDataType="number" value="block1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block1.x" name="21"/>
+      <item valueDataType="number" value="block1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block1.x" name="21"/>
+      <item valueDataType="number" value="block1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setLayerScale" target="System">
+      <item valueDataType="number" value="8" name="layer"/>
+      <item valueDataType="number" value="0.96" name="scaleX"/>
+      <item valueDataType="number" value="0.96" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setLayerScale" target="System">
+      <item valueDataType="number" value="7" name="layer"/>
+      <item valueDataType="number" value="0.92" name="scaleX"/>
+      <item valueDataType="number" value="0.92" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setLayerScale" target="System">
+      <item valueDataType="number" value="6" name="layer"/>
+      <item valueDataType="number" value="0.88" name="scaleX"/>
+      <item valueDataType="number" value="0.88" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setLayerScale" target="System">
+      <item valueDataType="number" value="5" name="layer"/>
+      <item valueDataType="number" value="0.84" name="scaleX"/>
+      <item valueDataType="number" value="0.84" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block2.x" name="21"/>
+      <item valueDataType="number" value="block2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block2.x" name="21"/>
+      <item valueDataType="number" value="block2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block2.x" name="21"/>
+      <item valueDataType="number" value="block2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block2.x" name="21"/>
+      <item valueDataType="number" value="block2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block3.x" name="21"/>
+      <item valueDataType="number" value="block3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block3.x" name="21"/>
+      <item valueDataType="number" value="block3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block3.x" name="21"/>
+      <item valueDataType="number" value="block3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block3.x" name="21"/>
+      <item valueDataType="number" value="block3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block4" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block4.x" name="21"/>
+      <item valueDataType="number" value="block4.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block4" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block4.x" name="21"/>
+      <item valueDataType="number" value="block4.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block4" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block4.x" name="21"/>
+      <item valueDataType="number" value="block4.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block4" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block4.x" name="21"/>
+      <item valueDataType="number" value="block4.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="pin" target="AIDragonBones4597" behaviorName="别针">
+      <item valueDataType="string" value="player" name="1" isFamily="false"/>
+      <item valueDataType="number" value="0" name="2"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block6" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block6.x" name="21"/>
+      <item valueDataType="number" value="block6.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block5" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block5.x" name="21"/>
+      <item valueDataType="number" value="block5.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block5" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block5.x" name="21"/>
+      <item valueDataType="number" value="block5.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block5" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block5.x" name="21"/>
+      <item valueDataType="number" value="block5.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block6" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block6.x" name="21"/>
+      <item valueDataType="number" value="block6.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block6" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block6.x" name="21"/>
+      <item valueDataType="number" value="block6.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block5" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block5.x" name="21"/>
+      <item valueDataType="number" value="block5.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block6" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block6.x" name="21"/>
+      <item valueDataType="number" value="block6.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block7" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block7.x" name="21"/>
+      <item valueDataType="number" value="block7.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block7" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block7.x" name="21"/>
+      <item valueDataType="number" value="block7.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block7" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block7.x" name="21"/>
+      <item valueDataType="number" value="block7.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block7" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block7.x" name="21"/>
+      <item valueDataType="number" value="block7.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setMirrored" target="guai1">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setMirrored" target="gou1">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="pin" target="gou1" behaviorName="别针">
+      <item valueDataType="string" value="guai1" name="1" isFamily="false"/>
+      <item valueDataType="number" value="0" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="pin" target="gou2" behaviorName="别针">
+      <item valueDataType="string" value="guai2" name="1" isFamily="false"/>
+      <item valueDataType="number" value="0" name="2"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block8" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block8.x" name="21"/>
+      <item valueDataType="number" value="block8.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block8" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block8.x" name="21"/>
+      <item valueDataType="number" value="block8.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block8" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block8.x" name="21"/>
+      <item valueDataType="number" value="block8.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block8" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block8.x" name="21"/>
+      <item valueDataType="number" value="block8.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block9" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block9.x" name="21"/>
+      <item valueDataType="number" value="block9.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block9" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block9.x" name="21"/>
+      <item valueDataType="number" value="block9.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block9" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block9.x" name="21"/>
+      <item valueDataType="number" value="block9.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block9" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block9.x" name="21"/>
+      <item valueDataType="number" value="block9.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block10" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="block10.x" name="21"/>
+      <item valueDataType="number" value="block10.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block10" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="block10.x" name="21"/>
+      <item valueDataType="number" value="block10.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block10" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="block10.x" name="21"/>
+      <item valueDataType="number" value="block10.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="block10" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="block10.x" name="21"/>
+      <item valueDataType="number" value="block10.y" name="20"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="ci1.x" name="21"/>
+      <item valueDataType="number" value="ci1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="ci2.x" name="21"/>
+      <item valueDataType="number" value="ci2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="8" name="22"/>
+      <item valueDataType="number" value="ci3.x" name="21"/>
+      <item valueDataType="number" value="ci3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="ci1.x" name="21"/>
+      <item valueDataType="number" value="ci1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="ci2.x" name="21"/>
+      <item valueDataType="number" value="ci2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="7" name="22"/>
+      <item valueDataType="number" value="ci3.x" name="21"/>
+      <item valueDataType="number" value="ci3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="ci1.x" name="21"/>
+      <item valueDataType="number" value="ci1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="ci2.x" name="21"/>
+      <item valueDataType="number" value="ci2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="6" name="22"/>
+      <item valueDataType="number" value="ci3.x" name="21"/>
+      <item valueDataType="number" value="ci3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci1" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="ci1.x" name="21"/>
+      <item valueDataType="number" value="ci1.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci2" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="ci2.x" name="21"/>
+      <item valueDataType="number" value="ci2.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="createObject" target="System">
+      <item valueDataType="string" value="ci3" name="23" isFamily="false"/>
+      <item valueDataType="number" value="5" name="22"/>
+      <item valueDataType="number" value="ci3.x" name="21"/>
+      <item valueDataType="number" value="ci3.y" name="20"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="s2time" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="gg" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapTextAlign" target="AIBitmapText4843">
+      <item valueDataType="string" value="%22right%22" name="textAlign"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="j" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="AIBitmapText4843">
+      <item valueDataType="number" value="0.5" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setSize" target="AIBitmapText4843">
+      <item valueDataType="number" value="620" name="16"/>
+      <item valueDataType="number" value="300" name="17"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareXPosEvent" callName="compareX" isTrigger="false" target="player">
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="number" value="2200" name="x"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setMaxSpeed" target="guai1" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="30" name="maxspeed"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="simulateControl" target="guai1" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="1" name="ctrl"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setMaxFallSpeed" target="guai1" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="1000" name="mfs"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareXPosEvent" callName="compareX" isTrigger="false" target="player">
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="number" value="2550" name="x"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setMaxSpeed" target="guai2" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="50" name="maxspeed"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="simulateControl" target="guai2" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="0" name="ctrl"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setMaxFallSpeed" target="guai2" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="1000" name="mfs"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="AudioContext.currentAvarageSpectrum" name="value1"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="90" name="value2"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="AudioContext.currentAvarageSpectrum" name="value1"/>
+      <item valueDataType="string" value="%22greaterOrEqual%22" name="operationType"/>
+      <item valueDataType="any" value="AudioContext.lastAvarageSpectrum" name="value2"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="j" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="simulateControl" target="player" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="2" name="ctrl"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="j" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="player" behaviorName="计时器">
+      <item valueDataType="number" value="300" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="%22timekey%22" name="3"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnPlatformLandEvent" callName="onLand" isTrigger="true" target="player" behaviorName="横轴跑酷"/>
+    <item type="action" persistent="false" callTarget="instance" callName="startTimer" target="player" behaviorName="计时器">
+      <item valueDataType="number" value="300" name="1"/>
+      <item valueDataType="number" value="1" name="2"/>
+      <item valueDataType="string" value="%22pause1%22" name="3"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="pause" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="player" behaviorName="计时器">
+      <item valueDataType="string" value="%22timekey%22" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="j" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="TimerOnTimerCompleteEvent" callName="onTimerComplete" isTrigger="true" target="player" behaviorName="计时器">
+      <item valueDataType="string" value="%22pause1%22" name="tag"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="pause" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareTwoValuesEvent" callName="compareTwoValue" isTrigger="false" target="System">
+      <item valueDataType="any" value="AudioContext.currentAvarageSpectrum" name="value1"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="40" name="value2"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pause" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="simulateControl" target="player" behaviorName="横轴跑酷">
+      <item valueDataType="number" value="1" name="ctrl"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryTickEvent" callName="everyTick" isTrigger="false" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setText" target="AITextField4657">
+      <item valueDataType="string" value="AudioContext.currentAvarageSpectrum" name="1"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnAudioContextSupportEvent" callName="onAudioContextSupport" isTrigger="true" target="AudioContext"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="guai1">
+      <item valueDataType="string" value="player" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIDragonBones4597"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="bei">
+      <item valueDataType="number" value="player.x" name="16"/>
+      <item valueDataType="number" value="player.y" name="17"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="bei">
+      <item valueDataType="string" value="%22tanqi%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="bei.y-200" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="500" name="duration"/>
+      <item valueDataType="string" value="%22backOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="guai2">
+      <item valueDataType="string" value="player" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIDragonBones4597"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="bei">
+      <item valueDataType="number" value="player.x" name="16"/>
+      <item valueDataType="number" value="player.y" name="17"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="bei">
+      <item valueDataType="string" value="%22tanqi%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="bei.y-200" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="500" name="duration"/>
+      <item valueDataType="string" value="%22backOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="bei">
+      <item valueDataType="string" value="%22tanqi%22" name="key"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="bei">
+      <item valueDataType="string" value="%22guale%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="1100" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22backIn%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="bei">
+      <item valueDataType="string" value="%22guale%22" name="key"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="AISprite4720">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="580" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22bounceOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIBitmapText4843"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="AISprite4944">
+      <item valueDataType="number" value="0" name="16"/>
+      <item valueDataType="number" value="0" name="17"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareYPosEvent" callName="compareY" isTrigger="false" target="player">
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="number" value="1100" name="y"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="AISprite4720">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="580" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22bounceOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="AISprite4944">
+      <item valueDataType="number" value="0" name="16"/>
+      <item valueDataType="number" value="0" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIBitmapText4843"/>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="AISprite4720">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setScale" target="dead">
+      <item valueDataType="number" value="0.01" name="16"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="dead">
+      <item valueDataType="number" value="320" name="16"/>
+      <item valueDataType="number" value="580" name="17"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="dead">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22elasticOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="Theend">
+      <item valueDataType="string" value="player" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="pass2" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="pass1">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="300" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22bounceOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="AIBitmapText4843">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="320" name="x"/>
+      <item valueDataType="number" value="200" name="y"/>
+      <item valueDataType="number" value="0.5" name="anchorX"/>
+      <item valueDataType="number" value="0.5" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22bounceOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="AISprite4944">
+      <item valueDataType="number" value="0" name="16"/>
+      <item valueDataType="number" value="0" name="17"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="pass1">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="wait" target="System">
+      <item valueDataType="number" value="1" name="time"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22newScene1%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="ci1">
+      <item valueDataType="string" value="player" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="bei">
+      <item valueDataType="number" value="player.x" name="16"/>
+      <item valueDataType="number" value="player.y" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIDragonBones4597"/>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="bei">
+      <item valueDataType="string" value="%22tanqi%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="bei.y-200" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="500" name="duration"/>
+      <item valueDataType="string" value="%22backOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="ci2">
+      <item valueDataType="string" value="player" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIDragonBones4597"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="bei">
+      <item valueDataType="number" value="player.x" name="16"/>
+      <item valueDataType="number" value="player.y" name="17"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="bei">
+      <item valueDataType="string" value="%22tanqi%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="bei.y-200" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="500" name="duration"/>
+      <item valueDataType="string" value="%22backOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnCollisionWithOtherObjectEvent" callName="onCollisionWithOtherObject" isTrigger="true" target="ci3">
+      <item valueDataType="string" value="player" name="object" isFamily="false"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setPosition" target="bei">
+      <item valueDataType="number" value="player.x" name="16"/>
+      <item valueDataType="number" value="player.y" name="17"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AIDragonBones4597"/>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="player"/>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="bei">
+      <item valueDataType="string" value="%22tanqi%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="bei.y-200" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="500" name="duration"/>
+      <item valueDataType="string" value="%22backOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="AISprite4720"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene5%22" name="18"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="s2time" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="EveryXSecondsEvent" callName="everyXSecondEvent" isTrigger="false" target="System">
+      <item valueDataType="number" value="0.1" name="interval"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="gg" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="addTo" target="System">
+      <item valueDataType="string" value="s2time" name="14" variable="true"/>
+      <item valueDataType="number" value="0.1" name="13"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapText" target="AIBitmapText4843">
+      <item valueDataType="string" value="System.s2time.toFixed(1)%2B's'" name="2"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnDestoryEvent" callName="onDestory" isTrigger="true" target="player"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="gg" name="10" variable="true"/>
+      <item valueDataType="any" value="1" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapTextAlign" target="AIBitmapText4843">
+      <item valueDataType="string" value="%22center%22" name="textAlign"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="changeArmature" target="AIDragonBones4597">
+      <item valueDataType="string" value="%22Armature%22" name="armatureName"/>
+      <item valueDataType="string" value="%22stand%22" name="animationName"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="System.best3.toFixed(1)%2B%22%E7%A7%92%E5%96%8A%E8%BF%87%E7%AC%AC%E4%B8%89%E5%85%B3%EF%BC%8C%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%E9%82%80%E4%BD%A0%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E6%88%91%E5%88%9A%E5%88%9A%E7%94%A8%22%2BSystem.best3.toFixed(1)%2B%22%E7%A7%92%EF%BC%8C%E5%9A%8E%E8%BF%87%E4%BA%86%E7%AC%AC%E4%B8%89%E5%85%B3%EF%BC%81%E6%B1%9F%E6%B9%96%E4%BA%BA%E6%AD%A3%E5%9C%A8%E4%BC%97%E7%AD%B9%E9%80%81%E6%88%91%E4%B8%8A%E7%81%AB%E6%98%9F%E2%80%A6%E2%80%A6%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="System.best2.toFixed(1)%2B%22%E7%A7%92%E5%96%8A%E8%BF%87%E7%AC%AC%E4%BA%8C%E5%85%B3%EF%BC%8C%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%E9%82%80%E4%BD%A0%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E6%88%91%E5%88%9A%E5%88%9A%E7%94%A8%22%2BSystem.best2.toFixed(1)%2B%22%E7%A7%92%EF%BC%8C%E5%90%BC%E8%BF%87%E4%BA%86%E7%AC%AC%E4%BA%8C%E5%85%B3%EF%BC%81%E6%B1%9F%E6%B9%96%E4%BA%BA%E9%80%81%E5%A4%96%E5%8F%B7%E6%92%BC%E4%BA%BA%E9%97%B4%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="System.best1.toFixed(1)%2B%22%E7%A7%92%E5%96%8A%E8%BF%87%E7%AC%AC%E4%B8%80%E5%85%B3%EF%BC%8C%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%E9%82%80%E4%BD%A0%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E6%88%91%E5%88%9A%E5%88%9A%E7%94%A8%22%2BSystem.best1.toFixed(1)%2B%22%E7%A7%92%EF%BC%8C%E5%96%8A%E8%BF%87%E4%BA%86%E7%AC%AC%E4%B8%80%E5%85%B3%EF%BC%81%E6%B1%9F%E6%B9%96%E4%BA%BA%E9%80%81%E5%A4%96%E5%8F%B7%E9%9C%87%E4%BA%91%E9%9C%84%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="%22%E8%B4%B9%E4%BA%86%E5%8D%8A%E5%A4%A9%E5%8A%B2%EF%BC%8C%E4%B8%80%E5%85%B3%E9%83%BD%E8%BF%87%E4%B8%8D%E4%BA%86%EF%BC%8C%E6%88%91%E5%A5%BD%E6%B0%94%E5%95%8A!!!%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E8%B4%B9%E4%BA%86%E5%8D%8A%E5%A4%A9%E5%8A%B2%EF%BC%8C%E4%B8%80%E5%85%B3%E9%83%BD%E8%BF%87%E4%B8%8D%E4%BA%86%EF%BC%8C%E6%88%91%E5%A5%BD%E6%B0%94%E5%95%8A!!!%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="AISprite4962"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoURL" target="Browser">
+      <item valueDataType="string" value="%22http%3A%2F%2Fsoft.imtt.qq.com%2Fbrowser%2Fchannel%2Fliberty_spread%2F133%2F1804%2FPenguineGame_android_1.6.0_23524.apk%22" name="2"/>
+      <item valueDataType="number" value="0" name="3"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="ajaxSendToURL" target="Ajax">
+      <item valueDataType="string" value="%22count%22" name="tag"/>
+      <item valueDataType="string" value="%22http%3A%2F%2Fgameanalysis.egret.com%2Fc.php%22" name="url"/>
+      <item valueDataType="string" value="%22%22" name="data"/>
+      <item valueDataType="string" value="%22POST%22" name="method"/>
+    </item>
+  </item>
+</eventSheets>

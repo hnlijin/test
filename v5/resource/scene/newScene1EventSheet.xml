@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eventSheets layout="newScene1" previous="" next="" version="2.2">
+  <item type="instance" UID="4975"/>
+  <item type="instance" UID="4957"/>
+  <item type="instance" UID="4954"/>
+  <item type="instance" UID="4930"/>
+  <item type="instance" UID="4901"/>
+  <item type="instance" UID="4889"/>
+  <item type="instance" UID="4856"/>
+  <item type="instance" UID="4853"/>
+  <item type="instance" UID="4850"/>
+  <item type="instance" UID="4670"/>
+  <item type="instance" UID="4667"/>
+  <item type="instance" UID="4664"/>
+  <item type="instance" UID="4918"/>
+  <item type="instance" UID="4921"/>
+  <item type="instance" UID="4927">
+    <item type="behavior" behaviorType="ScrollBehaivor" name="滚屏">
+      <item valueDataType="number" value="1" name="active"/>
+      <item valueDataType="string" value="%22scrollLeft%22" name="scrollDirectionType"/>
+      <item valueDataType="number" value="40" name="speed"/>
+    </item>
+  </item>
+  <item type="instance" UID="4898"/>
+  <item type="instance" UID="4924"/>
+  <item type="variable" variableName="j" variableType="number" initValue="0"/>
+  <item type="variable" variableName="best1" variableType="number" initValue="0"/>
+  <item type="variable" variableName="best3" variableType="number" initValue="0"/>
+  <item type="variable" variableName="best2" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pass1" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pass2" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pass3" variableType="number" initValue="0"/>
+  <item type="variable" variableName="pause" variableType="number" initValue="0"/>
+  <item type="variable" variableName="s1time" variableType="number" initValue="0"/>
+  <item type="variable" variableName="s2time" variableType="number" initValue="0"/>
+  <item type="variable" variableName="s3time" variableType="number" initValue="0"/>
+  <item type="variable" variableName="gg" variableType="number" initValue="0"/>
+  <item type="variable" variableName="dizhi" variableType="string" initValue="https://h5gogogo.egret-labs.org/v5/"/>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="stage1"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene4%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="stage2"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene5%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnButtonBeginEvent" callName="onButtonBegin" isTrigger="true" target="stage3"/>
+    <item type="action" persistent="false" callTarget="instance" callName="gotoScene" target="System">
+      <item valueDataType="string" value="%22MainScene6%22" name="18"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s1time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="best1" name="10" variable="true"/>
+      <item valueDataType="any" value="System.s1time" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s1time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="System.best1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s1time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="best1" name="10" variable="true"/>
+      <item valueDataType="any" value="System.s1time" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s2time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="best2" name="10" variable="true"/>
+      <item valueDataType="any" value="System.s2time" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s2time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="System.best2" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s2time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="best2" name="10" variable="true"/>
+      <item valueDataType="any" value="System.s2time" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s3time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="best3" name="10" variable="true"/>
+      <item valueDataType="any" value="System.s3time" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s3time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22lessThan%22" name="operationType"/>
+      <item valueDataType="any" value="System.best3" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="s3time" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="best3" name="10" variable="true"/>
+      <item valueDataType="any" value="System.s3time" name="9"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="stage2">
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapText" target="s1">
+      <item valueDataType="string" value="System.best1.toFixed(1)%2B's'" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="s1">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="stage3">
+      <item valueDataType="number" value="1" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapText" target="s2">
+      <item valueDataType="string" value="System.best2.toFixed(1)%2B's'" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="s2">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapText" target="s3">
+      <item valueDataType="string" value="System.best3.toFixed(1)%2B's'" name="2"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="s3">
+      <item valueDataType="number" value="1" name="10"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnSceneInitCompleteEvent" callName="onSceneInitComplete" isTrigger="true" target="System"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="s1">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="s2">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setVisible" target="s3">
+      <item valueDataType="number" value="0" name="10"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="stage3">
+      <item valueDataType="number" value="0" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="stage2">
+      <item valueDataType="number" value="0" name="14"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setValue" target="System">
+      <item valueDataType="string" value="j" name="10" variable="true"/>
+      <item valueDataType="any" value="0" name="9"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapTextAlign" target="s1">
+      <item valueDataType="string" value="%22center%22" name="textAlign"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapTextAlign" target="s2">
+      <item valueDataType="string" value="%22center%22" name="textAlign"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setBitmapTextAlign" target="s3">
+      <item valueDataType="string" value="%22center%22" name="textAlign"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="title">
+      <item valueDataType="string" value="%22tween1%22" name="key"/>
+      <item valueDataType="number" value="320-50%2Bls.random()*50" name="x"/>
+      <item valueDataType="number" value="200-50%2Bls.random()*50" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="3000" name="duration"/>
+      <item valueDataType="string" value="%22sineInOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="loadStorageFromJSON" target="System">
+      <item valueDataType="string" value="%22s1%22" name="key"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="System.best3.toFixed(1)%2B%22%E7%A7%92%E5%96%8A%E8%BF%87%E7%AC%AC%E4%B8%89%E5%85%B3%EF%BC%8C%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%E9%82%80%E4%BD%A0%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E6%88%91%E5%88%9A%E5%88%9A%E7%94%A8%22%2BSystem.best3.toFixed(1)%2B%22%E7%A7%92%EF%BC%8C%E5%9A%8E%E8%BF%87%E4%BA%86%E7%AC%AC%E4%B8%89%E5%85%B3%EF%BC%81%E6%B1%9F%E6%B9%96%E4%BA%BA%E6%AD%A3%E5%9C%A8%E4%BC%97%E7%AD%B9%E9%80%81%E6%88%91%E4%B8%8A%E7%81%AB%E6%98%9F%E2%80%A6%E2%80%A6%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="System.best2.toFixed(1)%2B%22%E7%A7%92%E5%96%8A%E8%BF%87%E7%AC%AC%E4%BA%8C%E5%85%B3%EF%BC%8C%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%E9%82%80%E4%BD%A0%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E6%88%91%E5%88%9A%E5%88%9A%E7%94%A8%22%2BSystem.best2.toFixed(1)%2B%22%E7%A7%92%EF%BC%8C%E5%90%BC%E8%BF%87%E4%BA%86%E7%AC%AC%E4%BA%8C%E5%85%B3%EF%BC%81%E6%B1%9F%E6%B9%96%E4%BA%BA%E9%80%81%E5%A4%96%E5%8F%B7%E6%92%BC%E4%BA%BA%E9%97%B4%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="1" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="System.best1.toFixed(1)%2B%22%E7%A7%92%E5%96%8A%E8%BF%87%E7%AC%AC%E4%B8%80%E5%85%B3%EF%BC%8C%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%E9%82%80%E4%BD%A0%E4%B8%80%E8%B5%B7%E6%9D%A5%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E6%88%91%E5%88%9A%E5%88%9A%E7%94%A8%22%2BSystem.best1.toFixed(1)%2B%22%E7%A7%92%EF%BC%8C%E5%96%8A%E8%BF%87%E4%BA%86%E7%AC%AC%E4%B8%80%E5%85%B3%EF%BC%81%E6%B1%9F%E6%B9%96%E4%BA%BA%E9%80%81%E5%A4%96%E5%8F%B7%E9%9C%87%E4%BA%91%E9%9C%84%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass2" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="pass3" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22equalTo%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareTimeline" target="wxfx">
+      <item valueDataType="string" value="%22%E8%B4%B9%E4%BA%86%E5%8D%8A%E5%A4%A9%E5%8A%B2%EF%BC%8C%E4%B8%80%E5%85%B3%E9%83%BD%E8%BF%87%E4%B8%8D%E4%BA%86%EF%BC%8C%E6%88%91%E5%A5%BD%E6%B0%94%E5%95%8A!!!%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="setShareAppMessage" target="wxfx">
+      <item valueDataType="string" value="%22%E5%92%86%E5%93%AE%E5%90%A7%EF%BC%81%E5%85%AB%E5%88%86%E9%9F%B3%E7%AC%A6%E9%85%B1%EF%BC%81%22" name=""/>
+      <item valueDataType="string" value="%22%E8%B4%B9%E4%BA%86%E5%8D%8A%E5%A4%A9%E5%8A%B2%EF%BC%8C%E4%B8%80%E5%85%B3%E9%83%BD%E8%BF%87%E4%B8%8D%E4%BA%86%EF%BC%8C%E6%88%91%E5%A5%BD%E6%B0%94%E5%95%8A!!!%22" name=""/>
+      <item valueDataType="string" value="System.dizhi" name=""/>
+      <item valueDataType="string" value="resource%2FuserAsset%2Flogo.jpg" name=""/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="CompareVariableEvent" callName="compareVariable" isTrigger="false" target="System">
+      <item valueDataType="string" value="best1" name="variable" variable="true"/>
+      <item valueDataType="string" value="%22greaterThan%22" name="operationType"/>
+      <item valueDataType="any" value="0" name="value"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="saveStorageToJSON" target="System">
+      <item valueDataType="string" value="%22s1%22" name="key"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="title">
+      <item valueDataType="string" value="%22tween1%22" name="key"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="title">
+      <item valueDataType="string" value="%22tween2%22" name="key"/>
+      <item valueDataType="number" value="320-50%2Bls.random()*50" name="x"/>
+      <item valueDataType="number" value="200-50%2Bls.random()*50" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="3000" name="duration"/>
+      <item valueDataType="string" value="%22sineInOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnTweenCompleteEvent" callName="onTweenComplete" isTrigger="true" target="title">
+      <item valueDataType="string" value="%22tween2%22" name="key"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="title">
+      <item valueDataType="string" value="%22tween1%22" name="key"/>
+      <item valueDataType="number" value="320-50%2Bls.random()*50" name="x"/>
+      <item valueDataType="number" value="200-50%2Bls.random()*50" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="3000" name="duration"/>
+      <item valueDataType="string" value="%22sineInOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+  </item>
+  <item type="event" conditionRelationShip="true" triggerOnceWhileTrue="false">
+    <item type="condition" callTarget="instance" paramsClass="OnAudioContextSupportEvent" callName="onAudioContextSupport" isTrigger="true" target="AudioContext"/>
+    <item type="condition" callTarget="instance" paramsClass="OnGetMediaFailureEvent" callName="onGetMediaFailure" isTrigger="true" target="AudioContext" operatorType="1"/>
+    <item type="action" persistent="false" callTarget="instance" callName="setEnabled" target="stage1">
+      <item valueDataType="number" value="0" name="14"/>
+    </item>
+    <item type="action" persistent="true" callTarget="instance" callName="execTween" target="AISprite4956">
+      <item valueDataType="string" value="%22tween%22" name="key"/>
+      <item valueDataType="number" value="" name="x"/>
+      <item valueDataType="number" value="800" name="y"/>
+      <item valueDataType="number" value="" name="anchorX"/>
+      <item valueDataType="number" value="" name="anchorY"/>
+      <item valueDataType="number" value="" name="width"/>
+      <item valueDataType="number" value="" name="height"/>
+      <item valueDataType="number" value="" name="rotation"/>
+      <item valueDataType="number" value="" name="alpha"/>
+      <item valueDataType="number" value="1000" name="duration"/>
+      <item valueDataType="string" value="%22elasticOut%22" name="ease"/>
+      <item valueDataType="number" value="0" name="waitTime"/>
+      <item valueDataType="number" value="0" name="loop"/>
+      <item valueDataType="number" value="1" name="scaleX"/>
+      <item valueDataType="number" value="1" name="scaleY"/>
+    </item>
+    <item type="action" persistent="false" callTarget="instance" callName="destory" target="AISprite4974"/>
+  </item>
+</eventSheets>
