@@ -1,29 +1,6 @@
 var math = require("math");
 var checker = require("./CardChecker")
-var max = 53;
-var min = 0;
-var cards = []
-for (var i = min; i <= max; i++)
-{
-	cards[i] = i;
-}
-for (var i = min; i <= max; i++)
-{
-	var n1 = cards[i]
-	var r = math.floor((max - min) * math.random() + min);
-	var n2 = cards[r];
-	cards[r] = n1;
-	cards[i] = n2;
-}
-var player = {}
-player[0] = [];
-player[1] = [];
-player[2] = [];
-for (var i = min; i <= max; i++)
-{
-	var k = i % 3;
-	player[k].push(cards[i]);
-}
+var card = require("./Card")
 
 function displayCard(arr)
 {
@@ -37,9 +14,20 @@ function displayCard(arr)
 	return newArr;
 }
 
-console.log("A:", displayCard(player[0]));
-console.log("B:", displayCard(player[1]));
-console.log("C:", displayCard(player[2]));
+gCards;
+gPlayers;
+gLandlord = -1; // 地主
+gGameState = 0; // 游戏状态
+gCurPlayerId = 0; // 当前玩家，其他为机器玩家
+gPlayerIndex = 0;
+
+function printCards(players)
+{
+	console.log("机器1:", players[1].length);
+	console.log("机器2:", players[2].length);
+	console.log("我的牌:", displayCard(players[0]));
+	console.log("底牌:", players[3].length);
+}
 
 const readline = require('readline');
 const rl = readline.createInterface({
@@ -56,6 +44,19 @@ rl.on('line', (line) => {
       console.log('bye!');
       process.exit(0);
       break;
+    case 'start':
+    	console.log("创建牌...");
+    	gCards = card.create()
+    	console.log("洗牌...")
+    	card.shuffleCard(gCards)
+    	console.log("开始发牌...");
+    	printCards(gCards);
+    	gPlayers = card.deal();
+    	console.log('随机地主...');
+    	gLandlord = card.randomLandlord();
+    	if (gLandlord == gCurPlayerId) {
+    		console.log("恭喜你，您为地主")
+    	}
     default:
       var str = line.trim();
       var arr = str.split(" ");
